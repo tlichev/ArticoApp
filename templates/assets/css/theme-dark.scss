@@ -1,0 +1,571 @@
+:root {
+    --darkColor: #1d1d1d;
+    --bgColor: #252525;
+    --cardColor: #0e0e0e;
+}
+
+.switch-box {
+    position: fixed;
+    bottom: 15px;
+    right: 120px;
+    z-index: 9999;
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: transparent;
+        border: 1.5px solid var(--pinkColor);
+        transition: 0.4s;
+        &::before {
+            position: absolute;
+            content: "";
+            height: 25px;
+            width: 25px;
+            left: 0px;
+            bottom: 4px;
+            top: 0;
+            bottom: 0;
+            margin: auto 0;
+            transition: 0.4s;
+            box-shadow: 0 0px 15px #2020203d;
+            background: white url('../images/night.png');
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        &.round {
+            border-radius: 34px;
+            &::before {
+                border-radius: 50%;
+            }
+        }
+    }
+    .switch {
+        position: relative;
+        display: inline-block;
+        width: 50px;
+        height: 30px;
+        input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+    }
+    input:checked + .slider {
+        background-color: transparent;
+        border: 1.5px solid var(--lightblueColor);
+    }
+      
+    input:focus + .slider {
+        box-shadow: 0 0 1px var(--lightblueColor);
+    }
+      
+    input:checked + .slider:before {
+        transform: translateX(24px);
+        background: white url('../images/sunny.png');
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+}
+.theme-dark {
+    --titleColor: var(--whiteColor);
+    --bodyColor: var(--whiteColor);
+    .default-btn {
+        &.two {
+            color: var(--cardColor) !important;
+        }
+        &:hover {
+            color: var(--cardColor) !important;
+        }
+    }
+    h1, h2, h3, h4, h5, h6 {
+        color: var(--whiteColor); 
+    }
+    h3 {
+        color: var(--whiteColor); 
+        a {
+            color: var(--whiteColor); 
+            transition: 0.7s;
+        }
+    }
+    p {
+        color: var(--whiteColor); 
+    }
+    body {
+        background: var(--darkColor);
+        color: var(--whiteColor); 
+    }
+    .navbar-area {
+        background-color: var(--bgColor);
+    }
+    .desktop-nav {
+        background-color: var(--bgColor);
+        .navbar {
+            .navbar-brand {
+                .logo-two {
+                    display: inline-block;
+                }
+                .logo-one {
+                    display: none;
+                }
+            }
+            .navbar-nav  {
+                .nav-item {
+                    .dropdown-menu {
+                        background-color: var(--darkColor) !important;
+                        li {
+                            a {
+                                color: var(--whiteColor); 
+                                &.active {
+                                    color: var(--pinkColor);
+                                }
+                                &:hover {
+                                    color: var(--pinkColor);
+                                }
+                            }
+                        }
+                    }
+                }   
+            }
+        }
+    }
+    .desktop-nav-one {
+        background-color: transparent;
+    }
+    .nav-widget-form {
+        &.nav-widget-form-bg {
+            .form-control  {
+                background-color: var(--darkColor);
+                color: var(--whiteColor);
+            }
+        }
+    }
+    .mobile-responsive-nav {
+        .mobile-responsive-menu {
+            &.mean-container {
+                .mean-nav {
+                    background-color: var(--bgColor);
+                    ul {
+                        li {
+                            a {
+                                color: var(--whiteColor);
+                                &.active {
+                                    color: var(--pinkColor);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+        .logo {
+            .logo-two {
+                display: inline-block;
+            }
+            .logo-one {
+                display: none;
+            }
+        }
+    }
+    .navbar-area {
+        &.is-sticky {
+            background-color: var(--bgColor) !important;
+        }
+    }
+    .banner-area {
+        background-color: var(--cardColor);
+    }
+    .banner-card {
+        .content {
+            background-color: var(--bgColor);
+        }
+    }
+    .banner-area-two, .inner-banner {
+        position: relative;
+        z-index: 1;
+        &::before {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--darkColor);
+            opacity: 0.7;
+        }
+    }
+    .banner-item {
+        .banner-item-img {
+            .banner-item-user {
+                background-color: var(--bgColor);
+            }
+        }
+    }
+    .about-widget-area {
+        background-color: var(--bgColor);
+    }
+    .about-card {
+        background-color: var(--cardColor);
+    }
+    .author-profile-sidebar {
+        background-color: var(--cardColor);
+        .author-content {
+            background-color: var(--bgColor);
+            .content-right {
+                &:hover {
+                    color: var(--cardColor);
+                }
+            }
+        }
+    }
+    .help-widget-form {
+        .search-form {
+            .form-control {
+                background-color: var(--bgColor);
+                color: var(--whiteColor);
+            }
+        }
+    }
+    .help-center-card {
+        background-color: var(--bgColor);
+    }
+    .trending-item {
+        background-color: var(--bgColor);
+        .trending-img {
+            .trending-user {
+                background-color: var(--bgColor);
+            }
+        }
+        .content {
+            background-color: var(--bgColor);
+        }
+    }
+    .trending-card {
+        background-color: var(--cardColor);
+        .trending-card-img {
+            span {
+                background-color: var(--bgColor);
+                border-color: var(--bgColor);
+            }
+        }
+        .content {
+            .trending-title {
+                background-color: var(--bgColor);
+            }
+        }
+    }
+    .auction-item {
+        background-color: var(--cardColor);
+    }
+    .auction-card {
+        .auction-card-img {
+            .auction-card-user {
+                background-color: var(--bgColor);
+            }
+        }
+        &::before {
+            background-color: var(--bgColor);
+        }
+        &::after {
+            background-color: var(--cardColor);
+        }
+        .content {
+            p {
+                background-color: var(--darkColor);
+            }
+        }
+    }
+    .featured-area, .trending-area-bg {
+        background-color: var(--bgColor);
+    }
+    .featured-tab-area {
+        .tabs {
+            li {
+                a {
+                   color: var(--whiteColor);
+                   background-color: var(--cardColor);
+                }
+                &.active a {
+                    background-color: var(--pinkColor);
+                    color: var(--whiteColor);
+                }
+                &.current a {
+                    background-color: var(--pinkColor);
+                    color: var(--whiteColor);
+                }
+            }
+        }
+    }
+    .featured-item{
+        background-color: var(--cardColor);
+        .featured-item-img {
+            .featured-user {
+                background-color: var(--bgColor);
+            }
+        }
+    }
+    .featured-card {
+        background-color: var(--cardColor);
+        .featured-card-img {
+            p {
+                background-color: var(--bgColor);
+                border-color: var(--darkColor);
+            }
+        }
+        .content {
+            .featured-user-option {
+                background-color: var(--bgColor);
+            }
+        }
+    }
+    .testimonial-area-two {
+        background-color: var(--bgColor);
+    }
+    .author-area, .author-widget-bg {
+        background-color: var(--bgColor);
+    }
+    .author-area-bg2 {
+        position: relative;
+        z-index: 1;
+        &::before {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--darkColor);
+            opacity: 0.9;
+        }
+    }
+    .author-area-bg3 {
+        background-color: #2b2b2b;
+    }
+    .author-card {
+        background-color: var(--cardColor);
+        .content {
+            .author-content {
+                background-color: var(--bgColor);
+            }
+        }
+    }
+    .author-item {
+        background-color: var(--cardColor);
+        .content {
+            .author-content {
+                background-color: var(--bgColor);
+            }
+        }
+    }
+    .collections-card {
+        background-color: var(--bgColor);
+    }
+    .collection-form {
+        background-color: var(--cardColor);
+        .form-group {
+            .form-control {
+                background-color: var(--bgColor);
+            }
+        }
+    }
+    .profile-outer {
+        .profileButton {
+            .profileButton-button {
+                background-color: var(--bgColor);
+            }
+        }
+    }
+    .preview-box {
+        .previewButton {
+            .previewButton-button {
+                background-color: var(--bgColor);
+            }
+        }
+    }
+    .collection-category {
+        ul {
+            li {
+                background-color: var(--bgColor);
+                color: var(--whiteColor);
+                &:hover {
+                    background-color: var(--pinkColor);
+                }
+            }
+        }
+    }
+    .checkbox-method-area {
+        .checkbox-method {
+            p [type="radio"]:not(:checked) + label {
+                color: var(--whiteColor);
+            }
+        }
+    }
+    .item-details-img {
+        span {
+            background-color: var(--bgColor);
+        }
+    }
+    .item-details-content {
+        background-color: var(--bgColor);
+    }
+    .item-details-content {
+        .item-details-card {
+            background-color: var(--cardColor);
+        }
+    }
+    .item-details-in-content {
+        background-color: var(--cardColor);
+    }
+    .item-details-user-area {
+        background-color: var(--bgColor);
+        .item-details-user-card {
+            background-color: var(--cardColor);
+        }
+    }
+    .activity-card {
+        background-color: var(--cardColor);
+    }
+    .contact-card {
+        background-color: var(--bgColor);
+    }
+    .contact-form {
+        background-color: var(--bgColor);
+        .form-group {
+            .form-control {
+                background-color: var(--cardColor);
+                color: var(--whiteColor);
+            }
+        }
+    }
+    .user-all-form {
+        .contact-form {
+            .sub-title {
+                span {
+                    background-color: var(--bgColor);
+                    color: var(--whiteColor);
+                }
+            }
+        }
+    }
+    .blog-area {
+        background-color: var(--bgColor);
+    }
+    .blog-card {
+        background-color: var(--cardColor);
+        .blog-img {
+            .blog-user {
+                background-color: var(--bgColor);
+            }
+        }
+    }
+    .blog-details-content {
+        .blockquote, .article-share-area {
+            background-color: var(--bgColor);
+            .tag-list {
+                li {
+                    a {
+                        background-color: var(--cardColor);
+                        color: var(--whiteColor);
+                        &:hover {
+                            background-color: var(--pinkColor);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .side-bar-profile, .widget-popular-post {
+        background-color: var(--bgColor);
+    }
+    .side-bar-widget {
+        .side-bar-widget-tag {
+            li {
+                background-color: var(--bgColor);
+                a {
+                    color: var(--whiteColor)
+                }
+                &:hover {
+                    background-color: var(--pinkColor);
+                }
+            }
+        }
+    }
+
+    .pagination-area {
+        .page-numbers {
+            color: var(--cardColor);
+        }
+    }
+    .involved-area-two, .team-area {
+        background-color: #2b2b2b;
+    }
+    .team-card {
+        background-color: var(--bgColor);
+    }
+    .wallet-card {
+        background-color: var(--bgColor);
+        .top-btn {
+            background-color: var(--cardColor);
+        }
+    }
+
+    .side-bar-widget {
+        .search-form {
+            .form-control {
+                background-color: var(--bgColor);
+                color: var(--whiteColor);
+            }
+        }
+        .form-group {
+            .form-control {
+                background-color: var(--bgColor);
+                color: var(--whiteColor);
+            }
+        }
+    }
+    .side-bar-widget-categories {
+        background-color: var(--bgColor);
+    }
+    .footer-area {
+        background-color: var(--cardColor);
+    }
+    .newsletter-area {
+        .newsletter-form {
+            .form-control {
+                background-color: var(--bgColor);
+                color: var(--whiteColor);
+            }
+        }
+    }
+    .footer-widget { 
+        .footer-logo {
+            .footer-logo2 {
+                display: block;
+            }
+            .footer-logo1 {
+                display: none;
+            }
+        }
+    }
+    .copyright-area {
+        background-color: var(--bgColor);
+    }
+    .coming-soon-area {
+        .coming-soon-content {
+            .newsletter-form {
+                .input-newsletter {
+                    background-color: var(--bgColor);
+                    color: var(--whiteColor);
+                }
+            }
+        }
+    }
+    
+}
