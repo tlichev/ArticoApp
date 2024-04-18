@@ -35,11 +35,11 @@ class Product(models.Model):
 
     long_description = models.TextField()
 
-    product_photo = models.ImageField(upload_to= 'product_photo/',
+    product_photo = models.ImageField(upload_to = 'product_photo/',
         null=False,
         blank=True,
         validators=(
-            MaxFileSizeValidator(limit_value= SIZE_5_MB),
+        MaxFileSizeValidator(limit_value = SIZE_5_MB),
         )
 
     )

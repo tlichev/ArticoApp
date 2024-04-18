@@ -1,17 +1,20 @@
-
 {% for product in photo_list %}
 
+<div class="col-lg-4 col-md-6">
     <div class="featured-card box-shadow" id="prod-{{ product.pk }}">
         <div class="featured-card-img">
             <a href="item-details.html">
                 <img src="{{ product.product_photo.url}}" alt="Images">
+
             </a>
-            <a href="{% url 'product_like' pk=product.pk %}"><p><i class="ri-heart-line"></i>{{ product.productlike_set.count }} likes</p></a>
+                <a href="{% url 'product_like' pk=product.pk %}"><p><i class="ri-heart-line"></i>{{ product.productlike_set.count }} likes</p></a>
+
     <button type="button" class="default-btn border-radius-5">Place Bid</button>
         </div>
 
         <div class="content">
             <h3><a href="item-details.html">{{ product.name }}</a></h3>
+
             <div class="content-in">
                 <div class="featured-card-left">
                     <span>{{ product.short_description}}</span>
@@ -28,6 +31,6 @@
             </a>
         </div>
     </div>
-
+</div>
 {% endfor %}
 
