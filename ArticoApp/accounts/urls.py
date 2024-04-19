@@ -7,7 +7,7 @@ urlpatterns = (
     path('login/', login, name='login'),
     path('author_profile/<slug:auth_slug>', include(
         [
-        path('', show_author_profile, name='author_profile'),
+        path('', show_author_profile, name='author-profile'),
     ]
     )),
 

@@ -37,7 +37,7 @@ class Product(models.Model):
 
     product_photo = models.ImageField(upload_to = 'product_photo/',
         null=False,
-        blank=True,
+        blank=False,
         validators=(
         MaxFileSizeValidator(limit_value = SIZE_5_MB),
         )

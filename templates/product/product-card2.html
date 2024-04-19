@@ -1,25 +1,32 @@
-
 {% for product in photo_list %}
 
+<div class="col-lg-4 col-md-6">
     <div class="featured-card box-shadow" id="prod-{{ product.pk }}">
         <div class="featured-card-img">
-            <a href="item-details.html">
+            <a href="{% url 'details-product' username='vic' product_slug=product.slug %}">
                 <img src="{{ product.product_photo.url}}" alt="Images">
+
             </a>
-            <a href="{% url 'product_like' pk=product.pk %}"><p><i class="ri-heart-line"></i>{{ product.productlike_set.count }} likes</p></a>
-    <button type="button" class="default-btn border-radius-5">Place Bid</button>
+                <a href="{% url 'product-like' pk=product.pk %}"><p><i class="ri-heart-line"></i>{{ product.productlike_set.count }} likes</p></a>
+
+
+        <a href="{% url 'details-product' username='vic' product_slug=product.slug %}">
+            <button type="button" class="default-btn border-radius-5"> More info</button>
+        </a>
+
         </div>
 
         <div class="content">
             <h3><a href="item-details.html">{{ product.name }}</a></h3>
+
             <div class="content-in">
                 <div class="featured-card-left">
                     <span>{{ product.short_description}}</span>
-                    <h4>{{ product.price }}</h4>
+                    <h4></h4>
                 </div>
 
-                <a href="item-details.html" class="featured-content-btn">
-                    <i class="ri-arrow-right-line"></i>
+                <a href="{% url 'details-product' username='vic' product_slug=product.slug %}">
+                    <button type="button" class="default-btn border-radius-5"> {{ product.price }} $</button>
                 </a>
             </div>
             <a href="author-profile.html" class="featured-user-option">
@@ -28,6 +35,6 @@
             </a>
         </div>
     </div>
-
+</div>
 {% endfor %}
 

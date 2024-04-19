@@ -4,6 +4,7 @@ from django.shortcuts import render
 from ArticoApp.products.models import Product
 
 
+
 # Create your views here.
 
 # classes with call
@@ -25,4 +26,7 @@ def show_author_profile(request, auth_slug):
         'product_photos': products,
     }
 
-    return render(request, 'author-profile.html', context)
+    return render(request, 'product/author-profile.html', context)
+
+
+

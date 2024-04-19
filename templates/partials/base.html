@@ -43,7 +43,7 @@
 
         <!-- Favicon -->
 {#        <link rel="icon" type="image/png" href="assets/images/favicon.png">#}
-        <link rel="icon" type="image/png" href="{% static '/images/favicon.png' %}">>
+        <link rel="icon" type="image/png" href="{% static '/images/favicon.png' %}">
 
     </head>
     <body>
@@ -60,18 +60,15 @@
         <!-- Start Navbar Area -->
         <div class="navbar-area">
             {% if request.user.is_authenticated %}
-                <p>vutre si</p>
-            {% else %}
-                <p>ne si vutre</p>
-            {% endif %}
-            tva e porerkata za login i logout
+
+{#-------------------------- Registered user ---------------------------------------#}
             <div class="mobile-responsive-nav">
                 <div class="container-fluid">
                     <div class="mobile-responsive-menu">
                         <div class="logo">
                             <a href="index.html">
-                                <img src="assets/images/logo-2.png" class="logo-one" alt="Logo">
-                                <img src="assets/images/logo.png" class="logo-two" alt="Logo">
+                                <img src="{% static "/images/logo-main.png" %}" class="logo-one" alt="Logo">
+                                <img src="{% static "/images/logo-main-2.png" %}" class="logo-two" alt="Logo">
                             </a>
                         </div>
                     </div>
@@ -84,7 +81,7 @@
                     <nav class="navbar navbar-expand-md navbar-light ">
                         <a class="navbar-brand" href="index.html">
 
-                            <img src="{% static '/images/logo.png' %}"  alt="Logo">
+                            <img src="{% static '/images/logo-main.png' %}" alt="Logo">
 
                         </a>
 
@@ -99,239 +96,49 @@
 
                         <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
                             <ul class="navbar-nav m-auto">
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link active">
-                                        Home
-                                        <i class="ri-arrow-down-s-line"></i>
-                                    </a>
-                                    <ul class="dropdown-menu">
-                                        <li class="nav-item">
-                                            <a href="index.html" class="nav-link active">
-                                                Home One
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="index-2.html" class="nav-link">
-                                                Home Two
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="index-3.html" class="nav-link">
-                                                Home Three
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
 
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link ">
+                                    <a href="{% url 'create-product' %}" class="nav-link ">
+
                                         Discover
                                         <i class="ri-arrow-down-s-line"></i>
                                     </a>
-                                    <ul class="dropdown-menu">
-                                        <li class="nav-item">
-                                            <a href="auction.html" class="nav-link">
-                                                Live Auction
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="discover-1.html" class="nav-link">
-                                                Discover Style One
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="discover-2.html" class="nav-link">
-                                                Discover Style Two
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="item-details.html" class="nav-link">
-                                                Item Details
-                                            </a>
-                                        </li>
-                                    </ul>
+
                                 </li>
 
                                 <li class="nav-item">
                                     <a href="activity.html" class="nav-link">
-                                        Activity
+                                        Trending
                                     </a>
                                 </li>
 
                                 <li class="nav-item">
                                     <a href="#" class="nav-link">
-                                        Pages
+                                        Discounts
                                         <i class="ri-arrow-down-s-line"></i>
                                     </a>
-                                    <ul class="dropdown-menu">
-                                        <li class="nav-item">
-                                            <a href="collection.html" class="nav-link">
-                                                Collection
-                                            </a>
-                                        </li>
 
-                                        <li class="nav-item">
-                                            <a href="create-collection.html" class="nav-link">
-                                                Create Collection
-                                            </a>
-                                        </li>
-
-
-
-                                        <li class="nav-item">
-                                            <a href="authors.html" class="nav-link">
-                                                Authors
-                                            </a>
-                                        </li>
-
-                                        <li class="nav-item">
-                                            <a href="author-profile.html" class="nav-link">
-                                                Author Profile
-                                            </a>
-                                        </li>
-
-                                        <li class="nav-item">
-                                            <a href="team.html" class="nav-link">
-                                                Team
-                                            </a>
-                                        </li>
-
-                                        <li class="nav-item">
-                                            <a href="testimonials.html" class="nav-link">
-                                                Testimonials
-                                            </a>
-                                        </li>
-
-
-
-                                        <li class="nav-item">
-                                            <a href="#" class="nav-link">
-                                                User
-                                                <i class="ri-arrow-down-s-line"></i>
-                                            </a>
-                                            <ul class="dropdown-menu">
-                                                <li class="nav-item">
-                                                    <a href="login.html" class="nav-link">
-                                                        Log In
-                                                    </a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a href="register.html" class="nav-link">
-                                                        Register
-                                                    </a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a href="forgot-password.html" class="nav-link">
-                                                        Forgot Password
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </li>
-
-                                        <li class="nav-item">
-                                            <a href="terms-condition.html" class="nav-link">
-                                                Terms & Conditions
-                                            </a>
-                                        </li>
-
-                                        <li class="nav-item">
-                                            <a href="privacy-policy.html" class="nav-link">
-                                                Privacy Policy
-                                            </a>
-                                        </li>
-
-                                        <li class="nav-item">
-                                            <a href="404.html" class="nav-link">
-                                                404 Page
-                                            </a>
-                                        </li>
-
-                                        <li class="nav-item">
-                                            <a href="coming-soon.html" class="nav-link">
-                                                Coming Soon
-                                            </a>
-                                        </li>
-                                    </ul>
                                 </li>
 
                                 <li class="nav-item">
                                     <a href="#" class="nav-link">
-                                        Community
+                                        Products
                                         <i class="ri-arrow-down-s-line"></i>
                                     </a>
-                                    <ul class="dropdown-menu">
-                                        <li class="nav-item">
-                                            <a href="about.html" class="nav-link">
-                                                About Us
-                                            </a>
-                                        </li>
 
-                                        <li class="nav-item">
-                                            <a href="add-wallet.html" class="nav-link">
-                                                Add Wallet
-                                            </a>
-                                        </li>
-
-                                        <li class="nav-item">
-                                            <a href="#" class="nav-link">
-                                                Blog
-                                                <i class="ri-arrow-down-s-line"></i>
-                                            </a>
-                                            <ul class="dropdown-menu">
-                                                <li class="nav-item">
-                                                    <a href="blog-1.html" class="nav-link">
-                                                        Blog Grid
-                                                    </a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a href="blog-2.html" class="nav-link">
-                                                        Blog Left Sidebar
-                                                    </a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a href="blog-3.html" class="nav-link">
-                                                        Blog Right Sidebar
-                                                    </a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a href="blog-details.html" class="nav-link">
-                                                        Blog Details
-                                                    </a>
-                                                </li>
-
-                                                <li class="nav-item">
-                                                    <a href="categories.html" class="nav-link">
-                                                        Categories
-                                                    </a>
-                                                </li>
-
-                                                <li class="nav-item">
-                                                    <a href="tags.html" class="nav-link">
-                                                        Tags
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </li>
-
-                                        <li class="nav-item">
-                                            <a href="help-center.html" class="nav-link">
-                                                Help Center
-                                            </a>
-                                        </li>
-                                    </ul>
                                 </li>
 
                                 <li class="nav-item">
                                     <a href="contact.html" class="nav-link">
-                                        Contact Us
+                                        My sells
                                     </a>
                                 </li>
                             </ul>
 
                             <div class="others-options">
                                 <ul class="optional-item-list">
-                                    <li><a href="create-collection.html">Create</a></li>
-                                    <li><a href="add-wallet.html" class="active">Connect Wallet</a></li>
+{#                                    <li><a href="create-collection.html">Create</a></li>#}
+                                    <li><a href="add-wallet.html" class="active">Profile</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -362,8 +169,8 @@
                             <div class="side-nav justify-content-center align-items-center">
                                 <div class="side-nav-item">
                                     <ul class="optional-item-list">
-                                        <li><a href="create-collection.html">Create</a></li>
-                                        <li><a href="add-wallet.html" class="active">Connect Wallet</a></li>
+{#                                        <li><a href="create-collection.html">Create</a></li>#}
+                                        <li><a href="add-wallet.html" class="active">Profile</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -372,6 +179,92 @@
                 </div>
             </div>
         </div>
+
+
+        {% else %}
+{#-------------------------- Not Registered user ---------------------------------------#}
+
+            <div class="mobile-responsive-nav">
+                <div class="container-fluid">
+                    <div class="mobile-responsive-menu">
+                        <div class="logo">
+                            <a href="index.html">
+                                <img src="{% static "/images/logo-main.png" %}" class="logo-one" alt="Logo">
+                                <img src="{% static "/images/logo-main-2.png" %}" class="logo-two" alt="Logo">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Menu For Desktop Device -->
+            <div class="desktop-nav desktop-nav-one nav-area">
+                <div class="container-fluid">
+                    <nav class="navbar navbar-expand-md navbar-light " style="justify-content: space-around">
+                        <a class="navbar-brand" href="index.html">
+
+                            <img src="{% static '/images/logo-main.png' %}" alt="Logo">
+
+                        </a>
+
+                        <div class="nav-widget-form">
+                            <form class="search-form" action="{% url 'index' %}" method="get">
+                                <input type="search" name="product_name_pattern" class="form-control" placeholder="Search items, Creators " value="{{ product_name_pattern }}">
+                                <button type="submit">
+                                    <i class="ri-search-line"></i>
+                                </button>
+                            </form>
+                        </div>
+
+                            <div class="others-options">
+                                <ul class="optional-item-list">
+                                    <li><a href="create-collection.html">Sign in</a></li>
+                                    <li><a href="add-wallet.html" class="active">Sign up</a></li>
+                                </ul>
+                            </div>
+
+                    </nav>
+                </div>
+            </div>
+
+
+
+            <div class="mobile-nav">
+                <div class="search-btn">
+                    <a class="#" href="#searchmodal" data-bs-toggle="modal" data-bs-target="#searchmodal">
+                        <i class="ri-search-line"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="side-nav-responsive">
+                <div class="container-max">
+                    <div class="dot-menu dot-menu-mt">
+                        <div class="circle-inner">
+                            <div class="circle circle-one"></div>
+                            <div class="circle circle-two"></div>
+                            <div class="circle circle-three"></div>
+                        </div>
+                    </div>
+
+                    <div class="container container-mt">
+                        <div class="side-nav-inner">
+                            <div class="side-nav justify-content-center align-items-center">
+                                <div class="side-nav-item">
+                                    <ul class="optional-item-list">
+                                        <li><a href="create-collection.html">Sign in</a></li>
+                                        <li><a href="add-wallet.html" class="active">Sign up</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {% endif %}
+
         <!-- End Navbar Area -->
 
         {% block main_content %}

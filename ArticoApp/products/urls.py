@@ -1,7 +1,13 @@
-from django.urls import path
+from django.urls import path, include
 
-from ArticoApp.products.views import create_product
+from ArticoApp.products.views import ProductCreateView, ProductDetailView
 
 urlpatterns = (
-    path('c/', create_product, name='create product'),
+    path('c/', ProductCreateView.as_view(), name='create-product'),
+    path("<str:username>/<slug:product_slug>/",
+             include([
+                 path("", ProductDetailView.as_view(), name='details-product'),
+                 # path("edit/", PetEditView.as_view(), name='edit pet'),
+                 # path("delete/", PetDeleteView.as_view(), name='delete pet'),
+             ])),
 )

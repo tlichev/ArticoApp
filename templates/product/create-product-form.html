@@ -53,8 +53,8 @@
                         <div class="user-all-form">
                             <div class="contact-form">
                                 <h3> Create product</h3>
-                                <form  action="{% url 'create product' %}" method="post">
-                                    {{ product_form.as_p}}
+                                <form  action="{% url 'create-product' %}" method="post"  enctype="multipart/form-data">
+                                    {{ form.as_p}}
 
 
                                             <button type="submit" class="default-btn">

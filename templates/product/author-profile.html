@@ -6,20 +6,23 @@
 
         <!-- Inner Banner -->
         <div class="inner-banner inner-bg10">
+
             <div class="container">
                 <div class="inner-title">
-                    <h3> Author Profile</h3>
-                    <ul>
-                        <li>
-                            <a href="index.html">Home</a>
-                        </li>
-                        <li>Pages</li>
-                        <li> Author Profile</li>
-                    </ul>
+{#                    <h3> Author Profile</h3>#}
+{#                    <ul>#}
+{#                        <li>#}
+{#                            <a href="../index.html">Home</a>#}
+{#                        </li>#}
+{#                        <li>Pages</li>#}
+{#                        <li> Author Profile</li>#}
+{#                    </ul>#}
 
                     <div class="inner-shape">
-                        <img src="assets/images/inner-banner/inner-shape1.png" alt="Images">
-                        <img src="assets/images/inner-banner/inner-shape2.png" alt="Images">
+
+                        <img src="{% static '/images/inner-banner/inner-shape1.png' %}" alt="Images">
+                        <img src="{% static '/images/inner-banner/inner-shape2.png' %}" alt="Images">
+
                     </div>
                 </div>
             </div>
@@ -36,7 +39,8 @@
                     <div class="col-lg-3">
                         <div class="author-profile-sidebar  mr-20">
                             <div class="author-user">
-                                <img src="assets/images/author/author-profile.jpg" alt="Images">
+
+                                <img src="{% static '/images/author/author-profile.jpg' %}" alt="Images">
                                 <i class="ri-check-line"></i>
                             </div>
     
@@ -81,29 +85,15 @@
                                     <ul class="tabs">
                                         <li>
                                             <a href="#">
-                                                All
+                                                Edit Profile
                                             </a>
                                         </li>
                                         <li>
                                             <a href="#">
-                                                Art
+                                                Delete Profile
                                             </a>
                                         </li>
-                                        <li>
-                                            <a href="#">
-                                                Virtual Worlds
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                Collectibles
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                Music
-                                            </a>
-                                        </li>
+
                                     </ul>
                                 </div>
                             </div>
@@ -112,7 +102,7 @@
                                 <div class="tabs_item current">
                                     <div class="row justify-content-center">
 {#                                        ----------------------------------------------#}
-                                        {% include 'partials/product-card2.html' with photo_list=product_photos %}
+                                        {% include 'product/product-card2.html' with photo_list=product_photos %}
 
 
                                     </div>
@@ -192,7 +182,7 @@
                                 <i class="ri-checkbox-circle-line"></i>
                             </div>
                             <h3>Become A <b>Creator</b></h3>
-                            <a href="register.html" class="default-btn">Register</a>
+                            <a href="../register.html" class="default-btn">Register</a>
                         </div>
                     </div>
 

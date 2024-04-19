@@ -1,0 +1,158 @@
+{% extends 'partials/base.html' %}
+{% load static %}
+
+
+{% block main_content %}
+
+        <!-- Modal Start -->
+        <div class="modal fade fade-scale searchmodal" id="searchmodal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-bs-dismiss="modal">
+                            <i class="ri-close-line"></i>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form class="modal-search-form">
+                            <input type="search" class="search-field" placeholder="Search...">
+                            <button type="submit"><i class="ri-search-line"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal End -->
+
+        <!-- Inner Banner -->
+        <div class="inner-banner inner-bg12">
+            <div class="container">
+                <div class="inner-title">
+                    <h3>Item Details</h3>
+                    <ul>
+                        <li>
+                            <a href="../index.html">Home</a>
+                        </li>
+                        <li>Discover</li>
+                        <li>Item Details</li>
+                    </ul>
+
+                    <div class="inner-shape">
+                        <img src="../assets/images/inner-banner/inner-shape1.png" alt="Images">
+                        <img src="../assets/images/inner-banner/inner-shape2.png" alt="Images">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Inner Banner End -->
+
+        <!-- Item Details Area -->
+        <div class="item-details-area pt-100 pb-70">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-7">
+                        <div class="item-details-left-side pr-20">
+                            <div class="item-details-img">
+                                <img src="{{ product.product_photo.url }}" alt="Images">
+                                <span>
+                                 <a href="{% url 'product-like' pk=product.pk %}"><p><i class="ri-heart-line"></i>{{ product.productlike_set.count }} likes</p></a>
+                                </span>
+                            </div>
+
+
+
+
+                        </div>
+                    </div>
+
+                    <div class="col-lg-5">
+                        <div class="item-details-dsce">
+                            <div class="section-title">
+                                <h2>Description</h2>
+                                <p>{{ product.long_description }}</p>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-lg-6 col-6">
+                                    <div class="item-details-user">
+                                        <h3>Creator</h3>
+                                        <div class="content">
+                                            <div class="images">
+                                                <img src="../assets/images/Item-details/Item-details-user2.jpg" alt="Images">
+                                                <i class="ri-check-line"></i>
+                                            </div>
+                                           
+                                            <span>@Maxwell</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="item-details-price">
+                                <div class="item-details-title">
+                                    <h3>Current Price 324 ETH</h3>
+                                    <p>$1200</p>
+                                    <span>1/10</span>
+                                </div>
+                                <ul>
+                                    <li>
+                                        Size 
+                                        <b>: 3000 x 3000</b>
+                                    </li>
+                                    <li>
+                                        Created 
+                                        <b>: 08 July, 2021</b>
+                                    </li>
+                                    <li> 
+                                        Collection
+                                        <b>: Rose Gold</b>
+                                    </li>
+                                    <li>
+                                        Category
+                                        <b>: Artwork</b>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="item-details-user-item">
+                                <div class="images">
+                                    <img src="../assets/images/Item-details/Item-details-user4.jpg" alt="Images">
+                                    <i class="ri-check-line"></i>
+                                </div>
+
+                                <div class="content">
+                                   <h3>Jecob Martin</h3>
+                                    <span>Item Owner</span>
+                                </div>
+                            </div>
+
+
+                            <div class="item-details-in-content">
+            {# --------------------------------------otstupka s if else--------------------------------------------------------------#}
+
+{#                                <div class="item-left">#}
+{#                                    <span>Auction Ends In</span>#}
+{#                                    <div class="timer-text" data-countdown="2022/11/11"></div>#}
+{#                                   #}
+{#                                </div>#}
+                                <div class="item-right">
+                                    <h3 class="item-remaining">Price</h3>
+                                    <h3 class="item-right-eth">{{ product.price }}$</h3>
+                                </div>
+                            </div>
+
+                            <div class="item-details-btn">
+                                <a href="item-details.html" class="default-btn border-radius-50">Buy</a>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Item Details Area End -->
+
+
+{% endblock %}
