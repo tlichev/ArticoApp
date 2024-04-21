@@ -53,6 +53,8 @@
                                     <span>Followers</span>
                                     <h4>2941</h4>
                                 </div>
+
+
     
                                 <div class="content-right">
                                     Follow
@@ -75,7 +77,9 @@
                                     </ul>
                                 </div>
                             </div>
+
                         </div>
+
                     </div>
 
                     <div class="col-lg-9">
@@ -83,16 +87,25 @@
                             <div class="row align-items-center">
                                 <div class="col-lg-12">
                                     <ul class="tabs">
-                                        <li>
-                                            <a href="#">
-                                                Edit Profile
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                Delete Profile
-                                            </a>
-                                        </li>
+
+                                        <a href="{% url 'signout-user' %}">
+                                            <button type="button" class="default-btn border-radius-5">
+                                            Sign Out
+                                            </button>
+                                        </a>
+                                        <a href="#">
+                                            <button type="button" class="default-btn border-radius-5">
+                                            Edit Profile
+                                            </button>
+                                        </a>
+
+
+
+{#                                        <li>#}
+{#                                            <a href="#">#}
+{#                                                Delete Profile#}
+{#                                            </a>#}
+{#                                        </li>#}
 
                                     </ul>
                                 </div>
@@ -182,7 +195,7 @@
                                 <i class="ri-checkbox-circle-line"></i>
                             </div>
                             <h3>Become A <b>Creator</b></h3>
-                            <a href="../register.html" class="default-btn">Register</a>
+                            <a href="../accounts/register.html" class="default-btn">Register</a>
                         </div>
                     </div>
 

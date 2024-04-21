@@ -7,7 +7,7 @@ from ArticoApp import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('ArticoApp.discover.urls')),
-    path('authors/', include('ArticoApp.accounts.urls')),
+    path('a/', include('ArticoApp.accounts.urls')),
     path('products/', include('ArticoApp.products.urls')),
     path('photos/', include('ArticoApp.photos.urls')),
 ]

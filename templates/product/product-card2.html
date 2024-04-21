@@ -10,7 +10,7 @@
                 <a href="{% url 'product-like' pk=product.pk %}"><p><i class="ri-heart-line"></i>{{ product.productlike_set.count }} likes</p></a>
 
 
-        <a href="{% url 'details-product' username='vic' product_slug=product.slug %}">
+        <a href="{% url 'details-product' username=request.user product_slug=product.slug %}">
             <button type="button" class="default-btn border-radius-5"> More info</button>
         </a>
 

@@ -1,13 +1,15 @@
 from django.urls import path, include
-
-from ArticoApp.accounts.views import register, login, show_author_profile
+from django.contrib.auth import  views as auth_views
+from ArticoApp.accounts.views import SignInUserView, SignUpUserView, signout_user, \
+    AuthorProfileView
 
 urlpatterns = (
-    path('register/', register, name='register'),
-    path('login/', login, name='login'),
-    path('author_profile/<slug:auth_slug>', include(
+    path('signup/', SignUpUserView.as_view(), name='signup-user'),
+    path('signin/', SignInUserView.as_view(), name='signin-user'),
+    path('signout/', signout_user, name='signout-user'),
+    path('<slug:auth_slug>', include(
         [
-        path('', show_author_profile, name='author-profile'),
+        path('', AuthorProfileView.as_view(), name='author-profile'),
     ]
     )),
 

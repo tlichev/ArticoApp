@@ -38,7 +38,7 @@ class ProductCreateView(views.CreateView):
         })
 
 class ProductDetailView(views.DetailView):
-    model = Product
+    queryset = Product.objects.all().prefetch_related('productlike_set')
     template_name = "product/item-details.html"
     slug_url_kwarg = "product_slug"
 
