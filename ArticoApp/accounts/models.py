@@ -1,5 +1,6 @@
 from django.contrib import auth
 from django.contrib.auth.hashers import make_password
+from django.contrib.auth.models import AbstractUser
 from django.contrib.auth.validators import UnicodeUsernameValidator
 from django.db import models
 from django.contrib.auth.base_user import AbstractBaseUser, BaseUserManager
@@ -78,8 +79,7 @@ class ArticoUserManager(BaseUserManager):
             )
         return self.none()
 
-class ArticoUser(auth_models.AbstractBaseUser, auth_models.PermissionsMixin):
-    # pasword and lastlogin from abstractBaseUser
+class ArticoUser(AbstractBaseUser, auth_models.PermissionsMixin):
     SLUG_MAX_LENGTH = 50
 
 
@@ -189,3 +189,8 @@ class Profile(models.Model):
         primary_key=True,
         on_delete=models.CASCADE,
     )
+
+
+
+class UserFollow(models.Model):
+    profile = models.ForeignKey(Profile, on_delete=models.DO_NOTHING)

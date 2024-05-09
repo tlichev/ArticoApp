@@ -8,20 +8,6 @@ from django.contrib.auth import mixins as auth_mixin
 from ArticoApp.products.models import Product
 
 
-# Create your views here.
-
-# def create_product(request):
-#     product_create_form = ProductCreateForm(request.POST or None)
-#
-#     if request.method == 'POST':
-#         if product_create_form.is_valid():
-#             product_create_form.save()
-#             return redirect('index')
-#     context = {
-#         'product_form': product_create_form,
-#     }
-#
-#     return render(request, 'forms/create-product-form.html', context)
 
 
 class ProductCreateView(views.CreateView):

@@ -6,11 +6,17 @@ from ArticoApp.accounts.models import Profile
 
 UserModel = get_user_model()
 
-@receiver(post_save, sender=UserModel)
 
-def user_created_signal(sender, instance, created, **kwargs):
-    # created = False when update
-    # created = True when create
+@receiver(post_save, sender=UserModel)
+def user_created(sender, instance, created, **kwargs):
+    # created = False, when update
+    # create = True, when create
     if not created:
         return
+
+    # Eager save
     Profile.objects.create(user=instance)
+    # same as:
+    # profile = Profile(user=instance)
+    # Can run other code
+    # profile.save()

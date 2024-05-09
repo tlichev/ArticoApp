@@ -6,6 +6,7 @@
 
         <!-- Inner Banner -->
         <div class="inner-banner inner-bg10">
+        <img src="{{ object.profile_banner.url }}" alt="Images">
 
             <div class="container">
                 <div class="inner-title">
@@ -40,24 +41,24 @@
                         <div class="author-profile-sidebar  mr-20">
                             <div class="author-user">
 
-                                <img src="{% static '/images/author/author-profile.jpg' %}" alt="Images">
+                                <img src="{{ object.profile_photo.url }}" alt="Images">
                                 <i class="ri-check-line"></i>
                             </div>
     
-                            <h3><a href="author-profile.html">Olivia Jenar</a></h3>
-                            <span>@Jenar</span>
-                            <p>All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary</p>
-                            <div class="sp-title">0x76669f...a0e9ca52 <i class="ri-folders-line"></i></div>
+                            <h3><a href="author-profile.html">{{ object.first_name }} {{object.last_name  }}</a></h3>
+                            <span>@{{ object.username }}</span>
+                            <p>{{ object.bio }}</p>
                             <div class="author-content">
                                 <div class="content-left">
                                     <span>Followers</span>
-                                    <h4>2941</h4>
+                                    <h4>{{ object.userfollow_set.count }}</h4>
                                 </div>
 
 
     
                                 <div class="content-right">
-                                    Follow
+                                    <a href="{% url 'follow-user' pk=object.user_id %}">Follow</a>
+
                                     <ul class="author-social">
                                         <li>
                                             <a href="https://www.facebook.com/" target="_blank">

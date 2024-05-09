@@ -138,7 +138,7 @@
                             <div class="others-options">
                                 <ul class="optional-item-list">
 {#                                    <li><a href="{% url 'signout-user' %}">Signout</a></li>#}
-                                    <li><a href="{% url 'author-profile' request.user.slug %}" class="active">Profile</a></li>
+                                    <li><a href="{% url 'author-profile' request.user.pk %}" class="active">Profile</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -219,7 +219,7 @@
                             <div class="others-options">
                                 <ul class="optional-item-list">
                                     <li><a href="{% url 'signin-user' %}">Sign in</a></li>
-                                    <li><a href="add-wallet.html" class="active">Sign up</a></li>
+                                    <li><a href="{% url 'signup-user' %}" class="active">Sign up</a></li>
                                 </ul>
                             </div>
 
@@ -253,7 +253,7 @@
                                 <div class="side-nav-item">
                                     <ul class="optional-item-list">
                                         <li><a href="{% url 'signin-user' %}">Sign in</a></li>
-                                        <li><a href="add-wallet.html" class="active">Sign up</a></li>
+                                        <li><a href="{% url 'signup-user' %}" class="active">Sign up</a></li>
                                     </ul>
                                 </div>
                             </div>

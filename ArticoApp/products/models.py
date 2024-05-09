@@ -1,16 +1,12 @@
-from django.core.exceptions import ValidationError
+from django.contrib.auth import get_user_model
 from django.core.validators import BaseValidator
 from django.db import models
 from django.utils.text import slugify
 
-
 # Create your models here.
 SIZE_5_MB = 5*1024*1024
 
-# def image_size_less_that_5mb_validator(value):
-#     if value.size >SIZE_5_MB:
-#         raise ValidationError('The size of the image must be less than 5mb')
-
+UserModel = get_user_model()
 
 class MaxFileSizeValidator(BaseValidator):
     def clean(self, x):
@@ -44,7 +40,6 @@ class Product(models.Model):
 
     )
 
-    likes = models.IntegerField(default=0)
 
     slug = models.SlugField(
         max_length=SLUG_MAX_LENGTH,
@@ -66,6 +61,8 @@ class Product(models.Model):
 
     )
 
+    # user = models.ForeignKey(to=UserModel, on_delete=models.RESTRICT)
+
     def save(self, *args, **kwargs):
         super().save(*args, **kwargs)
         # 2 saves because by creating model id is none and slug id is equal none
@@ -77,3 +74,4 @@ class Product(models.Model):
 
 class ProductLike(models.Model):
     product = models.ForeignKey(Product, on_delete=models.DO_NOTHING)
+    # user = models.ForeignKey(to=UserModel, on_delete=models.RESTRICT)

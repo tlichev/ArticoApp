@@ -12,7 +12,10 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 from pathlib import Path
 
+from django.contrib.auth import get_user_model
 from django.urls import reverse_lazy
+
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -46,7 +49,6 @@ INSTALLED_APPS = [
     # project apps
     'ArticoApp.accounts',
     'ArticoApp.discover',
-    'ArticoApp.photos',
     'ArticoApp.products',
 ]
 
@@ -155,7 +157,6 @@ LOGIN_URL = reverse_lazy('signin-user')
 LOGOUT_REDIRECT_URL = reverse_lazy('index')
 
 
-# get_user_model()
 
 # LOGGING = {
 #     'version': 1,
