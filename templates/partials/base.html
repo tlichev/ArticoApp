@@ -38,6 +38,8 @@
 {#        <link rel="stylesheet" href="assets/css/theme-dark.css">#}
         <link rel="stylesheet" href="{% static '/css/theme-dark.css' %}">
 
+        <link rel="stylesheet" href="{% static '/css/profile-circle-navbar.css' %}">
+
         <!-- Title -->
         <title>Trayancho se muchi</title>
 
@@ -79,7 +81,7 @@
             <div class="desktop-nav desktop-nav-one nav-area">
                 <div class="container-fluid">
                     <nav class="navbar navbar-expand-md navbar-light ">
-                        <a class="navbar-brand" href="index.html">
+                        <a class="navbar-brand" href="{% url 'index' %}">
 
                             <img src="{% static '/images/logo-main.png' %}" alt="Logo">
 
@@ -137,7 +139,12 @@
 
                             <div class="others-options">
                                 <ul class="optional-item-list">
-{#                                    <li><a href="{% url 'signout-user' %}">Signout</a></li>#}
+                                    {% if user.profile.profile_photo %}
+                                    <li class="username-tag" style="color: white"> <img class="user-photo" src="{{ request.user.profile.profile_photo.url }}" alt="User Photo"> @{{ request.user.profile.username }}</li>
+                                    {% else %}
+                                    <li class="username-tag" style="color: white"> <img class="user-photo" src="{% static '/images/default-user-photo.jpg' %}" alt="User Photo"> @{{ request.user.profile.username }}</li>
+
+                                    {% endif %}
                                     <li><a href="{% url 'author-profile' request.user.pk %}" class="active">Profile</a></li>
                                 </ul>
                             </div>
@@ -201,7 +208,7 @@
             <div class="desktop-nav desktop-nav-one nav-area">
                 <div class="container-fluid">
                     <nav class="navbar navbar-expand-md navbar-light " style="justify-content: space-around">
-                        <a class="navbar-brand" href="index.html">
+                        <a class="navbar-brand" href="{% url 'index' %}">
 
                             <img src="{% static '/images/logo-main.png' %}" alt="Logo">
 
@@ -278,7 +285,7 @@
                         <div class="footer-widget">
                             <div class="footer-logo">
                                 <a href="index.html">
-                                    <img src="assets/images/footer-logo.png" class="footer-logo1" alt="Footer Logo">
+                                    <img src="{% static '/images/logo-main-2.png' %}" class="footer-logo1" alt="Footer Logo">
                                     <img src="assets/images/logo.png" class="footer-logo2" alt="Footer Logo">
                                 </a>
                             </div>
@@ -301,22 +308,22 @@
                             <ul class="footer-list">
                                 <li>
                                     <a href="discover-1.html" target="_blank">
-                                        Art
+                                        Arts
                                     </a>
                                 </li>
                                 <li>
                                     <a href="discover-1.html" target="_blank">
-                                        All NFTs
+                                        Lorem
                                     </a>
                                 </li>
                                 <li>
                                     <a href="discover-1.html" target="_blank">
-                                        Music
+                                        Ipsuim
                                     </a>
                                 </li>
                                 <li>
                                     <a href="discover-1.html" target="_blank">
-                                        Trending Cards
+                                        Trending Arts
                                     </a>
                                 </li>
                             </ul>
@@ -415,17 +422,17 @@
             <div class="footer-shape">
                 <div class="footer-shape1">
 
-                    <img src="{% static 'assets/images/shape/shape-bg.png' %}" alt="Images">
+                    <img src="{% static '/images/shape/shape-bg.png' %}" alt="Images">
                 </div>
 
                 <div class="footer-shape2">
 
-                    <img src="{% static 'assets/images/shape/shape1.png' %}" alt="Images">
+                    <img src="{% static 'images/shape/shape1.png' %}" alt="Images">
+
                 </div>
 
                 <div class="footer-shape3">
-
-                    <img src="{% static 'assets/images/shape/shape2.png' %}" alt="Images">
+                        <img src="{% static 'images/shape/shape2.png' %}" alt="Images">
                 </div>
             </div>
         </footer>
@@ -438,8 +445,7 @@
                     <div class="col-lg-8">
                         <div class="copy-right-text">
                             <p>
-                               © <script>document.write(new Date().getFullYear())</script> Tezor. All Rights Reserved by
-                                <a href="https://hibootstrap.com/" target="_blank">HiBootstrap</a>
+                               © <script>document.write(new Date().getFullYear())</script> Artico.
                             </p>
 
                             <ul class="copy-right-list">

@@ -1,0 +1,7 @@
+ .user-photo {
+    width: 40px; /* Adjust size as needed */
+    height: 40px; /* Adjust size as needed */
+    border-radius: 50%; /* Creates circular shape */
+    object-fit: cover; /* Maintain aspect ratio */
+    margin-right: 10px; /* Adjust spacing */
+  }

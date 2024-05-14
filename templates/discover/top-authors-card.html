@@ -1,0 +1,30 @@
+{% for author in authors %}
+
+                    <div class="col-lg-3 col-6">
+                        <div class="author-item">
+                            <a href="{% url 'author-profile' pk=author.user_id %}">
+                                <img src="{{ author.profile_photo.url }}" alt="Images">
+                            </a>
+                            <div class="content">
+                                <div class="author-user-list">
+
+                                    <div class="author-user-content">
+                                        <h3><a href="author-profile.html">{{ author.first_name }} {{ author.last_name }}</a></h3>
+                                        <span>@{{ author.username }}</span>
+                                    </div>
+                                </div>
+    
+                                <div class="author-content">
+                                    <div class="content-left">
+                                        <span>Followers</span>
+                                        <h4>{{ author.userfollow_set.count }}</h4>
+                                    </div>
+
+
+                                         <a href="{% url 'follow-user' pk=author.user_id %}"><div class="content-right">Follow</div></a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+{% endfor %}

@@ -1,4 +1,4 @@
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, AccessMixin
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.contrib.auth import views as auth_views, login, logout, get_user_model
@@ -6,14 +6,25 @@ from django.urls import reverse_lazy, reverse
 from django.views import generic as views
 
 from ArticoApp.accounts.forms import SignUpUserForm, ProfileUserCreateForm
-from ArticoApp.accounts.models import Profile, ArticoUser, UserFollow
+from ArticoApp.accounts.models import Profile, UserFollow
 from ArticoApp.products.models import Product
-
-
 
 # Create your views here.
 
 # classes with call
+
+
+
+LoginRequiredMixin
+
+class OwnerRequiredMixin(AccessMixin):
+    # verify the current user has this profile
+
+    def dispatch(self, request, *args, **kwargs):
+        if  request.user.pk != kwargs.get('pk', None):
+            return self.handle_no_permission()
+        return super().dispatch(request, *args, **kwargs)
+
 
 class SignInUserView(auth_views.LoginView):
     template_name = 'accounts/login.html'
@@ -37,7 +48,7 @@ class SignUpUserView(views.CreateView):
 
 def signout_user(request):
     logout(request)
-    return render(request, 'index.html')
+    return render(request, 'discover/index.html')
 
 
 # def show_author_profile(request, auth_slug):
@@ -48,9 +59,19 @@ def signout_user(request):
 #
 #     return render(request, 'product/author-profile.html', context)
 
-class AuthorProfileView(views.DetailView):
+class AuthorProfileView(views.DetailView, OwnerRequiredMixin):
     queryset = Profile.objects.all()
     template_name = "product/author-profile.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        author_profile = self.get_object()  # Get the author profile object
+
+        # Get all products associated with the author profile
+        author_products = Product.objects.filter(user_id = self.object.pk)
+
+        context['author_products'] = author_products
+        return context
 
 
 class AuthorProfileCreateView(views.UpdateView):
@@ -69,7 +90,7 @@ class AuthorProfileCreateView(views.UpdateView):
 
 #
 # class AuthorProfileCreateView(views.UpdateView):
-    queryset = Profile.objects.all()
+#     queryset = Profile.objects.all()
 #     template_name = "accounts/create-profile-details.html"
 #     fields = ['username', 'first_name', 'last_name', 'bio', 'profile_photo', 'profile_banner', 'date_of_birth', ]
 #
@@ -87,7 +108,7 @@ class AuthorProfileCreateView(views.UpdateView):
 #
 #
 #
-
+#
 
 
 def follow_user(request, pk):
@@ -105,3 +126,7 @@ def follow_user(request, pk):
         UserFollow.objects.create(profile_id = pk)
 
     return redirect(request.META.get('HTTP_REFERER') )
+
+
+
+

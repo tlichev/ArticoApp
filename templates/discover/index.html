@@ -1,0 +1,355 @@
+{% extends 'partials/base.html' %}
+{% load static %}
+
+
+{% block main_content %}
+
+
+
+        <!-- Main Banner Area -->
+        <div class="banner-area">
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <div class="banner-content">
+                            <span>Welcome to Artico, where creativity meets commerce!</span>
+                            <h1>Unleash your inner artist or find your next masterpiece !</h1>
+                            <p>
+                                Join a community of passionate artists and art enthusiasts. Buy directly from creators or showcase your own work to a global audience.
+                                <br>
+                                Explore, buy, and sell original artworks on our vibrant platform."
+                            </p>
+                            <div class="banner-btn">
+                                <a href="{% url 'signup-user' %}" class="default-btn border-radius-5">Start your Journey</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+
+                        {% if first_product %}
+
+                        <div class="banner-card-area">
+                            <div class="row">
+                                <div class="col-lg-6 col-sm-6">
+                                    <div class="banner-card">
+                                        <div class="banner-card-img">
+                                            <img src="{{ first_product.product_photo.url }}"alt="Images">
+                                            <div class="banner-card-content">
+                                                <div class="card-left">
+                                                    <span>Start price</span>
+                                                    <h3>{{ first_product.price }}$</h3>
+                                                </div>
+                                                <div class="card-right">
+                                                    <h3>Remaining Time</h3>
+                                                    <div class="timer-text" data-countdown="2026/10/10"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+
+
+                                        <div class="content">
+                                            <div class="banner-user-list">
+                                                <div class="banner-user-list-img">
+
+                                                </div>
+
+                                                <h3><a href="{% url 'author-profile' pk=first_product.user_id %}">View Profile in Concrete</a></h3>
+                                                <span>Created by <a href="author-profile.html">@{{ first_product.user.profile.username }}</a></span>
+                                            </div>
+                                            <a href="{% url 'details-product' username=request.user product_slug=first_product.slug  %}"><button type="button" class="default-btn border-radius-5">View Art</button></a>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {% endif %}
+                                {% if second_product %}
+
+                                <div class="col-lg-6 col-sm-6">
+                                    <div class="banner-card banner-card-mt">
+                                        <div class="banner-card-img">
+                                            <img src="{{ second_product.product_photo.url }}" alt="Images">
+                                            <div class="banner-card-content">
+                                                <div class="card-left">
+                                                    <span>Start price</span>
+                                                    <h3>{{ second_product.price }}$</h3>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="content">
+                                             <div class="banner-user-list">
+                                                <div class="banner-user-list-img">
+
+                                                </div>
+                                                <h3><a href="{% url 'author-profile' pk=second_product.user_id %}">View Profile in Concrete</a></h3>
+                                                <span>Created by <a href="author-profile.html">@{{ second_product.user.profile.username }}</a></span>
+                                            </div>
+                                            <a href="{% url 'details-product' username=request.user product_slug=second_product.slug  %}"><button type="button" class="default-btn border-radius-5">View Art</button></a>
+
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                     {% endif %}
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="banner-shape">
+                <div class="shape-circle1">
+
+                     <img src="{% static '/images/home-one/circle1.png' %}" alt="Images">
+                </div>
+
+                <div class="shape-circle2">
+
+                    <img src="{% static '/images/home-one/circle2.png' %}" alt="Images">
+                </div>
+
+                <div class="shape-bg">
+
+                    <img src="{% static '/images/home-one/bg-shape.png' %}" alt="Images">
+                </div>
+            </div>
+        </div>
+        <!-- Main Banner Area End -->
+
+        <!-- Testimonial Area -->
+        <div class="testimonial-area ptb-100">
+            <div class="container">
+                <div class="testimonial-slider owl-carousel owl-theme">
+                    <div class="testimonial-item">
+                        <div class="testimonial-img">
+                            <img src="{% static '/images/testimonial/testimonial-img.png' %}" alt="Images">
+                        </div>
+
+                        <div class="testimonial-content">
+                            <img src="{% static '/images/testimonial/testimonial-line.png' %}" alt="Images">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elementum lacus, tempus aliquam turpis diam amet leo enim. Nisi enim lorem condimentum tincidunt ornare nam adipiscing. Volutpat lacus, est hendrerit elit sed interdum.</p>
+                            <ul>
+                                <li>Rennie Wood </li>
+                                <li>Founder</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-item">
+                        <div class="testimonial-img">
+
+                            <img src="{% static '/images/testimonial/testimonial-img2.png' %}" alt="Images">
+                        </div>
+
+                        <div class="testimonial-content">
+
+                            <img src="{% static '/images/testimonial/testimonial-line.png' %}" alt="Images">
+
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elementum lacus, tempus aliquam turpis diam amet leo enim. Nisi enim lorem condimentum tincidunt ornare nam adipiscing. Volutpat lacus, est hendrerit elit sed interdum.</p>
+                            <ul>
+                                <li>Macie Mood </li>
+                                <li>Ex Manager</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-item">
+                        <div class="testimonial-img">
+
+                            <img src="{% static '/images/testimonial/testimonial-img3.png' %}" alt="Images">
+                        </div>
+
+                        <div class="testimonial-content">
+
+                            <img src="{% static '/images/testimonial/testimonial-line.png' %}" alt="Images">
+
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elementum lacus, tempus aliquam turpis diam amet leo enim. Nisi enim lorem condimentum tincidunt ornare nam adipiscing. Volutpat lacus, est hendrerit elit sed interdum.</p>
+                            <ul>
+                                <li>Olivia Jenar</li>
+                                <li>CEO and Director</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Testimonial Area End -->
+
+        <!-- Trending Area -->
+        <div class="trending-area pt-100 pb-70">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-md-7">
+                        <div class="section-title">
+                            <h2>Trending Artwork</h2>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-5">
+                        <div class="trending-btn text-end">
+                            <a href="../product/item-details.html" class="default-btn border-radius-5">Explore More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="trending-slider owl-carousel owl-theme pt-45">
+                     {% include 'product/product-card.html' with photo_list=products %}
+                </div>
+            </div>
+        </div>
+        <!-- Trending Area End -->
+
+
+
+        <!-- Create Area -->
+            <div class="create-area pt-100 pb-70">
+            <div class="container">
+                <div class="section-title text-center">
+                    <h2>Create And Sell Your Artworks</h2>
+                </div>
+
+                <div class="row align-items-center pt-45">
+                    <div class="col-lg-6">
+                        <div class="create-img">
+                            <img src="{% static '/images/create/create-img.png' %}" alt="Images">
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="create-card-right pl-20">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-6 col-6">
+                                    <div class="create-card">
+                                        <img src="{% static '/images/create/create-icon1.png' %}" alt="Images">
+                                        <h3><a href="add-wallet.html">Set Up Your Wallet</a></h3>
+                                        <p>connect wallet by clicking the wallet icon in the top right corner. Learn about the wallets <a href="log-in.html"> we support.</a></p>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6 col-6">
+                                    <div class="create-card">
+                                        <img src="{% static '/images/create/create-icon2.png' %}" alt="Images">
+                                        <h3><a href="create-collection.html">Create Your Collection</a></h3>
+                                        <p>Click Create and Add social links, a description, profile & banner images, and set a secondary sales fee.</p>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6 col-6">
+                                    <div class="create-card">
+                                        <img src="{% static '/images/create/create-icon3.png' %}" alt="Images">
+                                        <h3><a href="help-center.html"> Add Your NFTs</a></h3>
+                                        <p>Upload your work (image, video, audio, or 3D art), add a title and description, and customize your NFTs</p>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6 col-6">
+                                    <div class="create-card">
+                                        <img src="{% static '/images/create/create-icon4.png' %}" alt="Images">
+                                        <h3><a href="activity.html">List Them For Sale</a></h3>
+                                        <p>Choose between auctions, fixed-price listings, and declining-price listings. You choose how you want to sell your NFTs</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Create Area End -->
+
+
+            <!-- Involved Area -->
+        <div class="involved-area-two pt-100 pb-70">
+            <div class="container">
+                <div class="section-title text-center">
+                    <h2>Get Involved</h2>
+                </div>
+
+                <div class="row pt-45">
+                    <div class="col-lg-3 col-6">
+                        <div class="involved-card">
+                            <div class="icon">
+                                <i class="ri-flight-takeoff-line"></i>
+                            </div>
+                            <h3>Join Our <b>Community</b></h3>
+                            <ul class="social-link">
+                                <li>
+                                    <a href="https://www.google.com/" target="_blank">
+                                        <i class="ri-google-fill"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.facebook.com/" target="_blank">
+                                        <i class="ri-facebook-fill"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.instagram.com/" target="_blank">
+                                        <i class="ri-instagram-fill"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://twitter.com/" target="_blank">
+                                        <i class="ri-twitter-fill"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.linkedin.com/" target="_blank">
+                                        <i class="ri-linkedin-fill"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-6">
+                        <div class="involved-card">
+                            <div class="icon">
+                                <i class="ri-checkbox-circle-line"></i>
+                            </div>
+                            <h3>Become A <b>Creator</b></h3>
+                            <a href="{% url 'signup-user' %}" class="default-btn">Register</a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-6">
+                        <div class="involved-card">
+                            <div class="icon">
+                                <i class="ri-heart-2-line"></i>
+                            </div>
+                            <h3>Become A <b>Charity Partner</b></h3>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-6">
+                        <div class="involved-card">
+                            <div class="icon">
+                                <i class="ri-discuss-line"></i>
+                            </div>
+                            <h3>Reach Out To <b>Our Authors</b></h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Involved Area End -->
+
+
+
+
+
+
+
+{% endblock %}
+
+
+
+
+

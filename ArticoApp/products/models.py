@@ -1,13 +1,14 @@
-from django.contrib.auth import get_user_model
-from django.core.validators import BaseValidator
+from django.conf import settings
 from django.db import models
 from django.utils.text import slugify
+from django.core.validators import BaseValidator
+
+from ArticoApp.core.models import IHaveUser
 
 # Create your models here.
 SIZE_5_MB = 5*1024*1024
 
-UserModel = get_user_model()
-
+print(settings.AUTH_USER_MODEL)
 class MaxFileSizeValidator(BaseValidator):
     def clean(self, x):
         return x.size
@@ -16,15 +17,32 @@ class MaxFileSizeValidator(BaseValidator):
         return max_size < file_size
 
 
-class Product(models.Model):
+class Product(IHaveUser, models.Model):
+    class Category(models.TextChoices):
+        PAINTINGS = 'Paintings', 'Paintings'
+        SCULPTURES = 'Sculptures', 'Sculptures'
+        PHOTOGRAPHY = 'Photography', 'Photography'
+        JEWELRY = 'Jewelry', 'Jewelry'
+        TOYS = 'Toys', 'Toys'
+        DIGITAL_ART = 'Digital Art', 'Digital Art'
+        OTHER = 'Other', 'Other'
+
     MAX_LENGTH = 300
 
     SLUG_MAX_LENGTH = 20
+
+
 
     name = models.CharField(
         max_length= MAX_LENGTH,
         null=False,
         blank=False
+    )
+
+    category = models.CharField(
+        max_length=50,
+        choices=Category.choices,
+        default=Category.OTHER,
     )
 
     short_description = models.TextField()
@@ -61,7 +79,9 @@ class Product(models.Model):
 
     )
 
-    # user = models.ForeignKey(to=UserModel, on_delete=models.RESTRICT)
+
+
+
 
     def save(self, *args, **kwargs):
         super().save(*args, **kwargs)
@@ -73,5 +93,5 @@ class Product(models.Model):
 
 
 class ProductLike(models.Model):
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.DO_NOTHING)
     product = models.ForeignKey(Product, on_delete=models.DO_NOTHING)
-    # user = models.ForeignKey(to=UserModel, on_delete=models.RESTRICT)

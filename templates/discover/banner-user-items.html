@@ -1,0 +1,35 @@
+{% for product in user_products %}
+
+
+                            <div class="banner-item">
+                                <div class="banner-item-img">
+                                    <img src="{{ product.product_photo.url }}" alt="Images">
+
+                                </div>
+
+                                <div class="content">
+                                    <h3>{{ product.name }}</h3>
+                                    <p><i class="ri-heart-line"></i> {{ product.productlike_set.count }}</p>
+                                    <div class="banner-item-content">
+                                        <div class="item-left">
+                                            <span>Price</span>
+                                            <h3 class="item-left-eth">{{ product.price }}</h3>
+                                        </div>
+                                        <div class="item-right">
+                                            <h3 class="item-remaining">{{ product.category }}</h3>
+                                            <h3 class="item-remaining">{{ product.short_description }}</h3>
+                                        </div>
+{#                                        add promotion counter if have#}
+{#                                        <div class="item-right">#}
+{#                                            <h3 class="item-remaining">Remaining Time</h3>#}
+{#                                            <div class="timer-text" data-countdown="2022/11/11"></div>#}
+{#                                        </div>#}
+                                    </div>
+                                    <a href="{% url 'details-product' username=request.user product_slug=product.slug %}" class="place-btn">Details</a>
+                                </div>
+                            </div>
+
+
+
+
+{% endfor %}

@@ -6,7 +6,7 @@
 
         <!-- Inner Banner -->
         <div class="inner-banner inner-bg10">
-        <img src="{{ object.profile_banner.url }}" alt="Images">
+
 
             <div class="container">
                 <div class="inner-title">
@@ -100,6 +100,12 @@
                                             </button>
                                         </a>
 
+                                        <a href="{% url 'create-product' %}">
+                                            <button type="button" class="default-btn border-radius-5">
+                                            Create Product
+                                            </button>
+                                        </a>
+
 
 
 {#                                        <li>#}
@@ -116,7 +122,9 @@
                                 <div class="tabs_item current">
                                     <div class="row justify-content-center">
 {#                                        ----------------------------------------------#}
-                                        {% include 'product/product-card2.html' with photo_list=product_photos %}
+                                        {% include 'product/product-card2.html' with photo_list=author_products %}
+
+
 
 
                                     </div>
@@ -125,21 +133,21 @@
 
                         </div>
 
-                        <div class="col-lg-12 col-md-12">
-                            <div class="pagination-area">
-                                <a href="author-profile.html" class="prev page-numbers">
-                                    <i class="ri-arrow-left-s-line"></i>
-                                </a>
-    
-                                <span class="page-numbers current" aria-current="page">1</span>
-                                <a href="author-profile.html" class="page-numbers">2</a>
-                                <a href="author-profile.html" class="page-numbers">3</a>
-                                
-                                <a href="author-profile.html" class="next page-numbers">
-                                    <i class="ri-arrow-right-s-line"></i>
-                                </a>
-                            </div>
-                        </div>
+{#                        <div class="col-lg-12 col-md-12">#}
+{#                            <div class="pagination-area">#}
+{#                                <a href="author-profile.html" class="prev page-numbers">#}
+{#                                    <i class="ri-arrow-left-s-line"></i>#}
+{#                                </a>#}
+{##}
+{#                                <span class="page-numbers current" aria-current="page">1</span>#}
+{#                                <a href="author-profile.html" class="page-numbers">2</a>#}
+{#                                <a href="author-profile.html" class="page-numbers">3</a>#}
+{##}
+{#                                <a href="author-profile.html" class="next page-numbers">#}
+{#                                    <i class="ri-arrow-right-s-line"></i>#}
+{#                                </a>#}
+{#                            </div>#}
+{#                        </div>#}
                     </div>
                 </div>
             </div>

@@ -1,0 +1,360 @@
+{% extends 'partials/base.html' %}
+{% load static %}
+
+
+{% block main_content %}
+
+        <!-- Main Banner Area -->
+        <div class="banner-area-two">
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <div class="banner-content-two">
+                            <h1>Collect NFTs From Our Creative & Rare Digital Artwork</h1>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquam etiam rhoncus aenean a iaculis aliquet accumsan sodales consectetur.
+                            </p>
+                            <div class="banner-btn">
+                                <a href="about.html" class="default-btn border-radius-5">Explore More</a>
+                                <a href="add-wallet.html" class="default-btn two border-radius-5">Connect NFT</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    {% if user_products %}
+
+                    <div class="col-lg-6">
+                        <div class="banner-item-slider owl-carousel owl-theme">
+
+                         {% include 'discover/banner-user-items.html' with products=user_products %}
+                        </div>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+
+            <div class="banner-shape">
+                <div class="shape-in1">
+                    <img src="assets/images/home-two/home-two-shape1.png" alt="Item">
+                </div>
+                <div class="shape-in2">
+                    <img src="assets/images/home-two/home-two-shape2.png" alt="Item">
+                </div>
+            </div>
+        </div>
+        <!-- Main Banner Area End -->
+
+        <!-- Trending Area -->
+        <div class="trending-area pt-100 pb-70">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-md-7">
+                        <div class="section-title">
+                            <h2>Trending Artwork</h2>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-5">
+                        <div class="trending-btn text-end">
+                            <a href="../product/item-details.html" class="default-btn border-radius-5">Explore More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="trending-slider owl-carousel owl-theme pt-45">
+                     {% include 'product/product-card.html' with photo_list=products %}
+                </div>
+            </div>
+        </div>
+        <!-- Trending Area End -->>
+
+        <!-- Top Sellers Area -->
+
+        <div class="top-sellers-area pb-70">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-md-6">
+                        <div class="section-title">
+                            <h2>Top Sellers</h2>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="trending-btn text-end">
+                            <a href="authors.html" class="default-btn border-radius-5">Explore More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center pt-45">
+
+                    {% if top_sellers %}
+                         {% include 'discover/top-sellers-card.html' with sellers=top_sellers %}
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <!-- Top Sellers Area End -->
+
+        <!-- Auctions Area -->
+        <div class="auctions-area-two pb-100">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-8 col-md-6">
+                        <div class="section-title">
+                            <h2>Live Auctions</h2>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="auction-btn text-end">
+                            <a href="auction.html" class="default-btn border-radius-5">Explore More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="auctions-slider-two owl-carousel owl-theme pt-45">
+                    <div class="auction-card">
+                        <div class="auction-card-img">
+                            <a href="auction.html">
+                                <img src="assets/images/auctions/auctions-img5.jpg" alt="Images">
+                            </a>
+                            <div class="auction-card-user">
+                                <a href="author-profile.html" class="auction-card-user-option">
+                                    <img src="assets/images/auctions/auctions-user1.jpg" alt="Images">
+                                    <span>Created by @Adison</span>
+                                </a>
+                            </div>
+                            <div class="auction-card-into">
+                                <h3>Remaining Time</h3>
+                                <div class="auction-timer">
+                                    <div class="auction-title" data-countdown="2022/10/10"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="content">
+                            <h3> <a href="auction.html">To Infinity And Beyond</a></h3>
+                            <p><i class="ri-heart-line"></i> 142</p>
+                            <div class="auction-card-content">
+                                <div class="card-left">
+                                    <span>Start Bid</span>
+                                    <h4>15,00 ETH</h4>
+                                </div>
+                                <div class="card-right">
+                                    <span>Highest Bid</span>
+                                    <h4>15,00 ETH</h4>
+                                </div>
+                            </div>
+                            <a href="auction.html" class="place-btn">Place Bid</a>
+                        </div>
+                    </div>
+
+                    <div class="auction-card">
+                        <div class="auction-card-img">
+                            <a href="auction.html">
+                                <img src="assets/images/auctions/auctions-img6.jpg" alt="Images">
+                            </a>
+                            <div class="auction-card-user">
+                                <a href="author-profile.html" class="auction-card-user-option">
+                                    <img src="assets/images/auctions/auctions-user2.jpg" alt="Images">
+                                    <span>Created by @Emilia</span>
+                                </a>
+                            </div>
+                            <div class="auction-card-into">
+                                <h3>Remaining Time</h3>
+                                <div class="auction-timer">
+                                    <div class="auction-title" data-countdown="2022/10/10"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="content">
+                            <h3> <a href="auction.html">Walking On Air</a></h3>
+                            <p><i class="ri-heart-line"></i> 162</p>
+                            <div class="auction-card-content">
+                                <div class="card-left">
+                                    <span>Start Bid</span>
+                                    <h4>16,00 ETH</h4>
+                                </div>
+                                <div class="card-right">
+                                    <span>Highest Bid</span>
+                                    <h4>12,00 ETH</h4>
+                                </div>
+                            </div>
+                            <a href="auction.html" class="place-btn">Place Bid</a>
+                        </div>
+                    </div>
+
+                    <div class="auction-card">
+                        <div class="auction-card-img">
+                            <a href="auction.html">
+                                <img src="assets/images/auctions/auctions-img7.jpg" alt="Images">
+                            </a>
+                            <div class="auction-card-user">
+                                <a href="author-profile.html" class="auction-card-user-option">
+                                    <img src="assets/images/auctions/auctions-user3.jpg" alt="Images">
+                                    <span>Created by @Daniel</span>
+                                </a>
+                            </div>
+                            <div class="auction-card-into">
+                                <h3>Remaining Time</h3>
+                                <div class="auction-timer">
+                                    <div class="auction-title" data-countdown="2022/10/10"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="content">
+                            <h3> <a href="auction.html">Industrial Revolution</a></h3>
+                            <p><i class="ri-heart-line"></i> 142</p>
+                            <div class="auction-card-content">
+                                <div class="card-left">
+                                    <span>Start Bid</span>
+                                    <h4>14,00 ETH</h4>
+                                </div>
+                                <div class="card-right">
+                                    <span>Highest Bid</span>
+                                    <h4>11,00 ETH</h4>
+                                </div>
+                            </div>
+                            <a href="auction.html" class="place-btn">Place Bid</a>
+                        </div>
+                    </div>
+
+                    <div class="auction-card">
+                        <div class="auction-card-img">
+                            <a href="auction.html">
+                                <img src="assets/images/auctions/auctions-img8.jpg" alt="Images">
+                            </a>
+                            <div class="auction-card-user">
+                                <a href="author-profile.html" class="auction-card-user-option">
+                                    <img src="assets/images/auctions/auctions-user4.jpg" alt="Images">
+                                    <span>Created by @Jekob</span>
+                                </a>
+                            </div>
+                            <div class="auction-card-into">
+                                <h3>Remaining Time</h3>
+                                <div class="auction-timer">
+                                    <div class="auction-title" data-countdown="2022/10/10"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="content">
+                            <h3> <a href="auction.html">Become On Nature</a></h3>
+                            <p><i class="ri-heart-line"></i> 142</p>
+                            <div class="auction-card-content">
+                                <div class="card-left">
+                                    <span>Start Bid</span>
+                                    <h4>17,00 ETH</h4>
+                                </div>
+                                <div class="card-right">
+                                    <span>Highest Bid</span>
+                                    <h4>13,00 ETH</h4>
+                                </div>
+                            </div>
+                            <a href="auction.html" class="place-btn">Place Bid</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Auctions Area End -->
+
+
+
+        <!-- Testimonial Area -->
+        <div class="testimonial-area ptb-100">
+            <div class="container">
+                <div class="testimonial-slider owl-carousel owl-theme">
+                    <div class="testimonial-item">
+                        <div class="testimonial-img">
+                            <img src="{% static '/images/testimonial/testimonial-img.png' %}" alt="Images">
+                        </div>
+
+                        <div class="testimonial-content">
+                            <img src="{% static '/images/testimonial/testimonial-line.png' %}" alt="Images">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elementum lacus, tempus aliquam turpis diam amet leo enim. Nisi enim lorem condimentum tincidunt ornare nam adipiscing. Volutpat lacus, est hendrerit elit sed interdum.</p>
+                            <ul>
+                                <li>Rennie Wood </li>
+                                <li>Founder</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-item">
+                        <div class="testimonial-img">
+
+                            <img src="{% static '/images/testimonial/testimonial-img2.png' %}" alt="Images">
+                        </div>
+
+                        <div class="testimonial-content">
+
+                            <img src="{% static '/images/testimonial/testimonial-line.png' %}" alt="Images">
+
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elementum lacus, tempus aliquam turpis diam amet leo enim. Nisi enim lorem condimentum tincidunt ornare nam adipiscing. Volutpat lacus, est hendrerit elit sed interdum.</p>
+                            <ul>
+                                <li>Macie Mood </li>
+                                <li>Ex Manager</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-item">
+                        <div class="testimonial-img">
+
+                            <img src="{% static '/images/testimonial/testimonial-img3.png' %}" alt="Images">
+                        </div>
+
+                        <div class="testimonial-content">
+
+                            <img src="{% static '/images/testimonial/testimonial-line.png' %}" alt="Images">
+
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elementum lacus, tempus aliquam turpis diam amet leo enim. Nisi enim lorem condimentum tincidunt ornare nam adipiscing. Volutpat lacus, est hendrerit elit sed interdum.</p>
+                            <ul>
+                                <li>Olivia Jenar</li>
+                                <li>CEO and Director</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Testimonial Area End -->
+
+        <!-- Author Area -->
+
+     {% if top_authors %}
+
+
+        <div class="author-area author-area-bg2 pt-100 pb-70">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-8 col-md-6">
+                        <div class="section-title">
+                            <h2>Top Author</h2>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="author-btn text-end">
+                            <a href="authors.html" class="default-btn border-radius-5">Explore More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row pt-45 justify-content-center">
+                     {% if top_authors %}
+                        {% include 'discover/top-authors-card.html' with authors=top_authors %}
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+     {% endif %}
+    <!-- Author Area End -->
+
+
+
+
+{% endblock %}

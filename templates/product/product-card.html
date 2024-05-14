@@ -22,9 +22,9 @@
                     <i class="ri-arrow-right-line"></i>
                 </a>
             </div>
-            <a href="author-profile.html" class="featured-user-option">
-                <img src="assets/images/featured/featured-user1.jpg" alt="Images">
-                <span>Created by @Adison</span>
+            <a href="{% url 'author-profile' pk=product.user_id %}" class="featured-user-option">
+                <img src="{{ product.user.profile.profile_photo.url }}" alt="Images">
+                <span>Created by @{{ product.user.profile.username }}</span>
             </a>
         </div>
     </div>

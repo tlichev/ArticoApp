@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.auth import forms as auth_forms, get_user_model
 
-from ArticoApp.accounts.models import ArticoUser, Profile
+from ArticoApp.accounts.models import Profile
 
 UserModel = get_user_model()
 
@@ -21,8 +21,11 @@ class ProfileUserCreateForm(forms.ModelForm):
     class Meta:
         model = Profile
 
-        fields = ['username', 'first_name',  'last_name', 'bio', 'profile_photo','profile_banner', 'date_of_birth',]
+        fields = ['username', 'first_name',  'last_name', 'bio', 'profile_photo', 'date_of_birth',]
 
 
 
 
+class ArticoChangeForm(auth_forms.UserChangeForm):
+    class Meta(auth_forms.UserChangeForm.Meta):
+        model = UserModel

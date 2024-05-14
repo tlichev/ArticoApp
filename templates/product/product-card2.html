@@ -3,7 +3,7 @@
 <div class="col-lg-4 col-md-6">
     <div class="featured-card box-shadow" id="prod-{{ product.pk }}">
         <div class="featured-card-img">
-            <a href="{% url 'details-product' username='vic' product_slug=product.slug %}">
+            <a href="{% url 'details-product' username=request.user product_slug=product.slug %}">
                 <img src="{{ product.product_photo.url}}" alt="Images">
 
             </a>
@@ -30,8 +30,8 @@
                 </a>
             </div>
             <a href="author-profile.html" class="featured-user-option">
-                <img src="assets/images/featured/featured-user1.jpg" alt="Images">
-                <span>Created by @Adison</span>
+                <img src="{{ object.profile_photo.url }}" alt="Images">
+                <span>Created by @{{ object.username }}</span>
             </a>
         </div>
     </div>
