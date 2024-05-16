@@ -52,13 +52,13 @@
                     <div class="col-lg-12">
                         <div class="user-all-form">
                             <div class="contact-form">
-                                <h3> Create product</h3>
+                                <h3> Profile details</h3>
                                 <form  action="{% url 'author-profile-create' request.user.pk %}" method="post"  enctype="multipart/form-data">
                                     {{ form.as_p}}
 
 
                                             <button type="submit" class="default-btn">
-                                                Create Product
+                                                Submit
                                             </button>
 
                                     {% csrf_token %}

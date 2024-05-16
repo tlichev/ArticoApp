@@ -38,11 +38,11 @@
                                             <div class="banner-card-content">
                                                 <div class="card-left">
                                                     <span>Start price</span>
-                                                    <h3>{{ first_product.price }}$</h3>
+                                                    <h3>{{ first_product.discounts.price_with_discount }}$</h3>
                                                 </div>
                                                 <div class="card-right">
                                                     <h3>Remaining Time</h3>
-                                                    <div class="timer-text" data-countdown="2026/10/10"></div>
+                                                    <div class="timer-text" data-countdown="{{ first_product.discounts.discount_end_date|date:'Y/m/d' }}"></div>
                                                 </div>
                                             </div>
                                         </div>

@@ -23,6 +23,16 @@ class ProfileUserCreateForm(forms.ModelForm):
 
         fields = ['username', 'first_name',  'last_name', 'bio', 'profile_photo', 'date_of_birth',]
 
+        widgets = {
+
+            "date_of_birth": forms.DateInput(attrs={
+                'class': 'date-input',
+                'placeholder': 'YYYY-MM-DD',
+                'type': 'date'
+            }),
+
+        }
+
 
 
 

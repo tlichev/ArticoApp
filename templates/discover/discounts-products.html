@@ -1,0 +1,1278 @@
+{% extends 'partials/base.html' %}
+{% load static %}
+
+
+{% block main_content %}
+
+
+        <!-- Inner Banner -->
+        <div class="inner-banner inner-bg3">
+            <div class="container">
+                <div class="inner-title">
+                    <h3>Discover Exclusive Artworks</h3>
+                    <ul>
+                        <li>
+                            <a href="index.html">Home</a>
+                        </li>
+                        <li>Discover</li>
+                        <li>Discover Your Product</li>
+                    </ul>
+
+                    <div class="inner-shape">
+                        <img src="{% static '/images/inner-banner/inner-shape1.png' %}" alt="Images">
+                        <img src="{% static '/images/inner-banner/inner-shape2.png' %}" alt="Images">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Inner Banner End -->
+
+        <!-- Featured Area -->
+        <div class="featured-area pt-100 pb-70">
+            <div class="container">
+                <div class="tab featured-tab-area">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6 col-md-4">
+                            <div class="section-title">
+                                <h2>Discover Assets</h2>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-md-8">
+                            <ul class="tabs">
+                                <li>
+                                    <a href="#">
+                                        All
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        Paintings
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        Photography
+                                    </a>
+                                </li>
+                                <li>
+
+                                <li>
+                                <a href="#">
+                                        Other
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="tab_content current active pt-45">
+                        <div class="tabs_item current">
+                            <div class="row justify-content-center">
+                                {% include 'discover/discover-product.html' with discover_products=products_with_discount %}
+
+                            </div>
+                        </div>
+
+                        <div class="tabs_item">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-3 col-md-6">
+                                    <div class="featured-item">
+                                        <div class="featured-item-img">
+                                            <a href="../product/item-details.html">
+                                                <img src="../assets/images/featured/featured-img5.jpg" alt="Images">
+                                            </a>
+                                            <div class="featured-user">
+                                                <a href="../product/author-profile.html" class="featured-user-option">
+                                                    <img src="../assets/images/featured/featured-user5.jpg" alt="Images">
+                                                    <span>Created by @Daniel</span>
+                                                </a>
+                                            </div>
+                                            <button type="button" class="default-btn border-radius-5">Place Bid</button>
+                                        </div>
+
+                                        <div class="content">
+                                            <h3><a href="../product/author-profile.html">Walking On Air</a></h3>
+                                            <div class="content-in">
+                                                <span>110 ETH 12/14</span>
+                                                <h4>Bid 90 ETH </h4>
+                                            </div>
+                                            <div class="featured-content-list">
+                                                <ul>
+                                                    <li><img src="../assets/images/featured/featured-user6.jpg" alt="Images"></li>
+                                                    <li><img src="../assets/images/featured/featured-user7.jpg" alt="Images"></li>
+                                                    <li class="title">10+ People Placed Bid</li>
+                                                </ul>
+
+                                                <p><i class="ri-heart-line"></i> 112</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3 col-md-6">
+                                    <div class="featured-item">
+                                        <div class="featured-item-img">
+                                            <a href="../product/item-details.html">
+                                                <img src="../assets/images/featured/featured-img6.jpg" alt="Images">
+                                            </a>
+                                            <div class="featured-user">
+                                                <a href="../product/author-profile.html" class="featured-user-option">
+                                                    <img src="../assets/images/featured/featured-user6.jpg" alt="Images">
+                                                    <span>Created by @Samuel</span>
+                                                </a>
+                                            </div>
+                                            <button type="button" class="default-btn border-radius-5">Place Bid</button>
+                                        </div>
+
+                                        <div class="content">
+                                            <h3><a href="../product/author-profile.html">Supper Nuemorphism</a></h3>
+                                            <div class="content-in">
+                                                <span>130 ETH 12/14</span>
+                                                <h4>Bid 70 ETH </h4>
+                                            </div>
+                                            <div class="featured-content-list">
+                                                <ul>
+                                                    <li><img src="../assets/images/featured/featured-user7.jpg" alt="Images"></li>
+                                                    <li><img src="../assets/images/featured/featured-user8.jpg" alt="Images"></li>
+                                                    <li class="title">10+ People Placed Bid</li>
+                                                </ul>
+
+                                                <p><i class="ri-heart-line"></i> 162</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3 col-md-6">
+                                    <div class="featured-item">
+                                        <div class="featured-item-img">
+                                            <a href="../product/item-details.html">
+                                                <img src="../assets/images/featured/featured-img7.jpg" alt="Images">
+                                            </a>
+                                            <div class="featured-user">
+                                                <a href="../product/author-profile.html" class="featured-user-option">
+                                                    <img src="../assets/images/featured/featured-user7.jpg" alt="Images">
+                                                    <span>Created by @Martina</span>
+                                                </a>
+                                            </div>
+                                            <button type="button" class="default-btn border-radius-5">Place Bid</button>
+                                        </div>
+
+                                        <div class="content">
+                                            <h3><a href="../product/author-profile.html">Dark-light Angel</a></h3>
+                                            <div class="content-in">
+                                                <span>110 ETH 12/14</span>
+                                                <h4>Bid 80 ETH </h4>
+                                            </div>
+                                            <div class="featured-content-list">
+                                                <ul>
+                                                    <li><img src="../assets/images/featured/featured-user8.jpg" alt="Images"></li>
+                                                    <li><img src="../assets/images/featured/featured-user1.jpg" alt="Images"></li>
+                                                    <li class="title">10+ People Placed Bid</li>
+                                                </ul>
+
+                                                <p><i class="ri-heart-line"></i> 162</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3 col-md-6">
+                                    <div class="featured-item">
+                                        <div class="featured-item-img">
+                                            <a href="../product/item-details.html">
+                                                <img src="../assets/images/featured/featured-img8.jpg" alt="Images">
+                                            </a>
+                                            <div class="featured-user">
+                                                <a href="../product/author-profile.html" class="featured-user-option">
+                                                    <img src="../assets/images/featured/featured-user8.jpg" alt="Images">
+                                                    <span>Created by @Henry</span>
+                                                </a>
+                                            </div>
+                                            <button type="button" class="default-btn border-radius-5">Place Bid</button>
+                                        </div>
+
+                                        <div class="content">
+                                            <h3><a href="../product/author-profile.html">Exe Dream Hight</a></h3>
+                                            <div class="content-in">
+                                                <span>160 ETH 12/14</span>
+                                                <h4>Bid 90 ETH </h4>
+                                            </div>
+                                            <div class="featured-content-list">
+                                                <ul>
+                                                    <li><img src="../assets/images/featured/featured-user1.jpg" alt="Images"></li>
+                                                    <li><img src="../assets/images/featured/featured-user3.jpg" alt="Images"></li>
+                                                    <li class="title">10+ People Placed Bid</li>
+                                                </ul>
+
+                                                <p><i class="ri-heart-line"></i> 182</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3 col-md-6">
+                                    <div class="featured-item">
+                                        <div class="featured-item-img">
+                                            <a href="../product/item-details.html">
+                                                <img src="../assets/images/featured/featured-img1.jpg" alt="Images">
+                                            </a>
+                                            <div class="featured-user">
+                                                <a href="../product/author-profile.html" class="featured-user-option">
+                                                    <img src="../assets/images/featured/featured-user1.jpg" alt="Images">
+                                                    <span>Created by @Farnil</span>
+                                                </a>
+                                            </div>
+                                            <button type="button" class="default-btn border-radius-5">Place Bid</button>
+                                        </div>
+
+                                        <div class="content">
+                                            <h3><a href="../product/author-profile.html">Industrial Revolution</a></h3>
+                                            <div class="content-in">
+                                                <span>100 ETH 12/14</span>
+                                                <h4>Bid 80 ETH </h4>
+                                            </div>
+                                            <div class="featured-content-list">
+                                                <ul>
+                                                    <li><img src="../assets/images/featured/featured-user1.jpg" alt="Images"></li>
+                                                    <li><img src="../assets/images/featured/featured-user2.jpg" alt="Images"></li>
+                                                    <li class="title">10+ People Placed Bid</li>
+                                                </ul>
+
+                                                <p><i class="ri-heart-line"></i> 122</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3 col-md-6">
+                                    <div class="featured-item">
+                                        <div class="featured-item-img">
+                                            <a href="../product/item-details.html">
+                                                <img src="../assets/images/featured/featured-img2.jpg" alt="Images">
+                                            </a>
+                                            <div class="featured-user">
+                                                <a href="../product/author-profile.html" class="featured-user-option">
+                                                    <img src="../assets/images/featured/featured-user2.jpg" alt="Images">
+                                                    <span>Created by @Adison</span>
+                                                </a>
+                                            </div>
+                                            <button type="button" class="default-btn border-radius-5">Place Bid</button>
+                                        </div>
+
+                                        <div class="content">
+                                            <h3><a href="../product/author-profile.html">Love In The Air</a></h3>
+                                            <div class="content-in">
+                                                <span>110 ETH 12/14</span>
+                                                <h4>Bid 70 ETH </h4>
+                                            </div>
+                                            <div class="featured-content-list">
+                                                <ul>
+                                                    <li><img src="../assets/images/featured/featured-user3.jpg" alt="Images"></li>
+                                                    <li><img src="../assets/images/featured/featured-user2.jpg" alt="Images"></li>
+                                                    <li class="title">10+ People Placed Bid</li>
+                                                </ul>
+
+                                                <p><i class="ri-heart-line"></i> 112</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3 col-md-6">
+                                    <div class="featured-item">
+                                        <div class="featured-item-img">
+                                            <a href="../product/item-details.html">
+                                                <img src="../assets/images/featured/featured-img3.jpg" alt="Images">
+                                            </a>
+                                            <div class="featured-user">
+                                                <a href="../product/author-profile.html" class="featured-user-option">
+                                                    <img src="../assets/images/featured/featured-user3.jpg" alt="Images">
+                                                    <span>Created by @Jekob</span>
+                                                </a>
+                                            </div>
+                                            <button type="button" class="default-btn border-radius-5">Place Bid</button>
+                                        </div>
+
+                                        <div class="content">
+                                            <h3><a href="../product/author-profile.html">Become One With Nature</a></h3>
+                                            <div class="content-in">
+                                                <span>120 ETH 12/14</span>
+                                                <h4>Bid 90 ETH </h4>
+                                            </div>
+                                            <div class="featured-content-list">
+                                                <ul>
+                                                    <li><img src="../assets/images/featured/featured-user4.jpg" alt="Images"></li>
+                                                    <li><img src="../assets/images/featured/featured-user5.jpg" alt="Images"></li>
+                                                    <li class="title">10+ People Placed Bid</li>
+                                                </ul>
+
+                                                <p><i class="ri-heart-line"></i> 132</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3 col-md-6">
+                                    <div class="featured-item">
+                                        <div class="featured-item-img">
+                                            <a href="../product/item-details.html">
+                                                <img src="../assets/images/featured/featured-img4.jpg" alt="Images">
+                                            </a>
+                                            <div class="featured-user">
+                                                <a href="../product/author-profile.html" class="featured-user-option">
+                                                    <img src="../assets/images/featured/featured-user4.jpg" alt="Images">
+                                                    <span>Created by @Jack</span>
+                                                </a>
+                                            </div>
+                                            <button type="button" class="default-btn border-radius-5">Place Bid</button>
+                                        </div>
+
+                                        <div class="content">
+                                            <h3><a href="../product/author-profile.html">Twilight Fracture City</a></h3>
+                                            <div class="content-in">
+                                                <span>130 ETH 12/14</span>
+                                                <h4>Bid 80 ETH </h4>
+                                            </div>
+                                            <div class="featured-content-list">
+                                                <ul>
+                                                    <li><img src="../assets/images/featured/featured-user5.jpg" alt="Images"></li>
+                                                    <li><img src="../assets/images/featured/featured-user6.jpg" alt="Images"></li>
+                                                    <li class="title">10+ People Placed Bid</li>
+                                                </ul>
+
+                                                <p><i class="ri-heart-line"></i> 142</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tabs_item">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-3 col-md-6">
+                                    <div class="featured-item">
+                                        <div class="featured-item-img">
+                                            <a href="../product/item-details.html">
+                                                <img src="../assets/images/featured/featured-img3.jpg" alt="Images">
+                                            </a>
+                                            <div class="featured-user">
+                                                <a href="../product/author-profile.html" class="featured-user-option">
+                                                    <img src="../assets/images/featured/featured-user3.jpg" alt="Images">
+                                                    <span>Created by @Jekob</span>
+                                                </a>
+                                            </div>
+                                            <button type="button" class="default-btn border-radius-5">Place Bid</button>
+                                        </div>
+
+                                        <div class="content">
+                                            <h3><a href="../product/author-profile.html">Become One With Nature</a></h3>
+                                            <div class="content-in">
+                                                <span>120 ETH 12/14</span>
+                                                <h4>Bid 90 ETH </h4>
+                                            </div>
+                                            <div class="featured-content-list">
+                                                <ul>
+                                                    <li><img src="../assets/images/featured/featured-user4.jpg" alt="Images"></li>
+                                                    <li><img src="../assets/images/featured/featured-user5.jpg" alt="Images"></li>
+                                                    <li class="title">10+ People Placed Bid</li>
+                                                </ul>
+
+                                                <p><i class="ri-heart-line"></i> 132</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3 col-md-6">
+                                    <div class="featured-item">
+                                        <div class="featured-item-img">
+                                            <a href="../product/item-details.html">
+                                                <img src="../assets/images/featured/featured-img4.jpg" alt="Images">
+                                            </a>
+                                            <div class="featured-user">
+                                                <a href="../product/author-profile.html" class="featured-user-option">
+                                                    <img src="../assets/images/featured/featured-user4.jpg" alt="Images">
+                                                    <span>Created by @Jack</span>
+                                                </a>
+                                            </div>
+                                            <button type="button" class="default-btn border-radius-5">Place Bid</button>
+                                        </div>
+
+                                        <div class="content">
+                                            <h3><a href="../product/author-profile.html">Twilight Fracture City</a></h3>
+                                            <div class="content-in">
+                                                <span>130 ETH 12/14</span>
+                                                <h4>Bid 80 ETH </h4>
+                                            </div>
+                                            <div class="featured-content-list">
+                                                <ul>
+                                                    <li><img src="../assets/images/featured/featured-user5.jpg" alt="Images"></li>
+                                                    <li><img src="../assets/images/featured/featured-user6.jpg" alt="Images"></li>
+                                                    <li class="title">10+ People Placed Bid</li>
+                                                </ul>
+
+                                                <p><i class="ri-heart-line"></i> 142</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3 col-md-6">
+                                    <div class="featured-item">
+                                        <div class="featured-item-img">
+                                            <a href="../product/item-details.html">
+                                                <img src="../assets/images/featured/featured-img5.jpg" alt="Images">
+                                            </a>
+                                            <div class="featured-user">
+                                                <a href="../product/author-profile.html" class="featured-user-option">
+                                                    <img src="../assets/images/featured/featured-user5.jpg" alt="Images">
+                                                    <span>Created by @Daniel</span>
+                                                </a>
+                                            </div>
+                                            <button type="button" class="default-btn border-radius-5">Place Bid</button>
+                                        </div>
+
+                                        <div class="content">
+                                            <h3><a href="../product/author-profile.html">Walking On Air</a></h3>
+                                            <div class="content-in">
+                                                <span>110 ETH 12/14</span>
+                                                <h4>Bid 90 ETH </h4>
+                                            </div>
+                                            <div class="featured-content-list">
+                                                <ul>
+                                                    <li><img src="../assets/images/featured/featured-user6.jpg" alt="Images"></li>
+                                                    <li><img src="../assets/images/featured/featured-user7.jpg" alt="Images"></li>
+                                                    <li class="title">10+ People Placed Bid</li>
+                                                </ul>
+
+                                                <p><i class="ri-heart-line"></i> 112</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3 col-md-6">
+                                    <div class="featured-item">
+                                        <div class="featured-item-img">
+                                            <a href="../product/item-details.html">
+                                                <img src="../assets/images/featured/featured-img6.jpg" alt="Images">
+                                            </a>
+                                            <div class="featured-user">
+                                                <a href="../product/author-profile.html" class="featured-user-option">
+                                                    <img src="../assets/images/featured/featured-user6.jpg" alt="Images">
+                                                    <span>Created by @Samuel</span>
+                                                </a>
+                                            </div>
+                                            <button type="button" class="default-btn border-radius-5">Place Bid</button>
+                                        </div>
+
+                                        <div class="content">
+                                            <h3><a href="../product/author-profile.html">Supper Nuemorphism</a></h3>
+                                            <div class="content-in">
+                                                <span>130 ETH 12/14</span>
+                                                <h4>Bid 70 ETH </h4>
+                                            </div>
+                                            <div class="featured-content-list">
+                                                <ul>
+                                                    <li><img src="../assets/images/featured/featured-user7.jpg" alt="Images"></li>
+                                                    <li><img src="../assets/images/featured/featured-user8.jpg" alt="Images"></li>
+                                                    <li class="title">10+ People Placed Bid</li>
+                                                </ul>
+
+                                                <p><i class="ri-heart-line"></i> 162</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3 col-md-6">
+                                    <div class="featured-item">
+                                        <div class="featured-item-img">
+                                            <a href="../product/item-details.html">
+                                                <img src="../assets/images/featured/featured-img7.jpg" alt="Images">
+                                            </a>
+                                            <div class="featured-user">
+                                                <a href="../product/author-profile.html" class="featured-user-option">
+                                                    <img src="../assets/images/featured/featured-user7.jpg" alt="Images">
+                                                    <span>Created by @Martina</span>
+                                                </a>
+                                            </div>
+                                            <button type="button" class="default-btn border-radius-5">Place Bid</button>
+                                        </div>
+
+                                        <div class="content">
+                                            <h3><a href="../product/author-profile.html">Dark-light Angel</a></h3>
+                                            <div class="content-in">
+                                                <span>110 ETH 12/14</span>
+                                                <h4>Bid 80 ETH </h4>
+                                            </div>
+                                            <div class="featured-content-list">
+                                                <ul>
+                                                    <li><img src="../assets/images/featured/featured-user8.jpg" alt="Images"></li>
+                                                    <li><img src="../assets/images/featured/featured-user1.jpg" alt="Images"></li>
+                                                    <li class="title">10+ People Placed Bid</li>
+                                                </ul>
+
+                                                <p><i class="ri-heart-line"></i> 162</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3 col-md-6">
+                                    <div class="featured-item">
+                                        <div class="featured-item-img">
+                                            <a href="../product/item-details.html">
+                                                <img src="../assets/images/featured/featured-img8.jpg" alt="Images">
+                                            </a>
+                                            <div class="featured-user">
+                                                <a href="../product/author-profile.html" class="featured-user-option">
+                                                    <img src="../assets/images/featured/featured-user8.jpg" alt="Images">
+                                                    <span>Created by @Henry</span>
+                                                </a>
+                                            </div>
+                                            <button type="button" class="default-btn border-radius-5">Place Bid</button>
+                                        </div>
+
+                                        <div class="content">
+                                            <h3><a href="../product/author-profile.html">Exe Dream Hight</a></h3>
+                                            <div class="content-in">
+                                                <span>160 ETH 12/14</span>
+                                                <h4>Bid 90 ETH </h4>
+                                            </div>
+                                            <div class="featured-content-list">
+                                                <ul>
+                                                    <li><img src="../assets/images/featured/featured-user1.jpg" alt="Images"></li>
+                                                    <li><img src="../assets/images/featured/featured-user3.jpg" alt="Images"></li>
+                                                    <li class="title">10+ People Placed Bid</li>
+                                                </ul>
+
+                                                <p><i class="ri-heart-line"></i> 182</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3 col-md-6">
+                                    <div class="featured-item">
+                                        <div class="featured-item-img">
+                                            <a href="../product/item-details.html">
+                                                <img src="../assets/images/featured/featured-img1.jpg" alt="Images">
+                                            </a>
+                                            <div class="featured-user">
+                                                <a href="../product/author-profile.html" class="featured-user-option">
+                                                    <img src="../assets/images/featured/featured-user1.jpg" alt="Images">
+                                                    <span>Created by @Farnil</span>
+                                                </a>
+                                            </div>
+                                            <button type="button" class="default-btn border-radius-5">Place Bid</button>
+                                        </div>
+
+                                        <div class="content">
+                                            <h3><a href="../product/author-profile.html">Industrial Revolution</a></h3>
+                                            <div class="content-in">
+                                                <span>100 ETH 12/14</span>
+                                                <h4>Bid 80 ETH </h4>
+                                            </div>
+                                            <div class="featured-content-list">
+                                                <ul>
+                                                    <li><img src="../assets/images/featured/featured-user1.jpg" alt="Images"></li>
+                                                    <li><img src="../assets/images/featured/featured-user2.jpg" alt="Images"></li>
+                                                    <li class="title">10+ People Placed Bid</li>
+                                                </ul>
+
+                                                <p><i class="ri-heart-line"></i> 122</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3 col-md-6">
+                                    <div class="featured-item">
+                                        <div class="featured-item-img">
+                                            <a href="../product/item-details.html">
+                                                <img src="../assets/images/featured/featured-img2.jpg" alt="Images">
+                                            </a>
+                                            <div class="featured-user">
+                                                <a href="../product/author-profile.html" class="featured-user-option">
+                                                    <img src="../assets/images/featured/featured-user2.jpg" alt="Images">
+                                                    <span>Created by @Adison</span>
+                                                </a>
+                                            </div>
+                                            <button type="button" class="default-btn border-radius-5">Place Bid</button>
+                                        </div>
+
+                                        <div class="content">
+                                            <h3><a href="../product/author-profile.html">Love In The Air</a></h3>
+                                            <div class="content-in">
+                                                <span>110 ETH 12/14</span>
+                                                <h4>Bid 70 ETH </h4>
+                                            </div>
+                                            <div class="featured-content-list">
+                                                <ul>
+                                                    <li><img src="../assets/images/featured/featured-user3.jpg" alt="Images"></li>
+                                                    <li><img src="../assets/images/featured/featured-user2.jpg" alt="Images"></li>
+                                                    <li class="title">10+ People Placed Bid</li>
+                                                </ul>
+
+                                                <p><i class="ri-heart-line"></i> 112</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tabs_item">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-3 col-md-6">
+                                    <div class="featured-item">
+                                        <div class="featured-item-img">
+                                            <a href="../product/item-details.html">
+                                                <img src="../assets/images/featured/featured-img5.jpg" alt="Images">
+                                            </a>
+                                            <div class="featured-user">
+                                                <a href="../product/author-profile.html" class="featured-user-option">
+                                                    <img src="../assets/images/featured/featured-user5.jpg" alt="Images">
+                                                    <span>Created by @Daniel</span>
+                                                </a>
+                                            </div>
+                                            <button type="button" class="default-btn border-radius-5">Place Bid</button>
+                                        </div>
+
+                                        <div class="content">
+                                            <h3><a href="../product/author-profile.html">Walking On Air</a></h3>
+                                            <div class="content-in">
+                                                <span>110 ETH 12/14</span>
+                                                <h4>Bid 90 ETH </h4>
+                                            </div>
+                                            <div class="featured-content-list">
+                                                <ul>
+                                                    <li><img src="../assets/images/featured/featured-user6.jpg" alt="Images"></li>
+                                                    <li><img src="../assets/images/featured/featured-user7.jpg" alt="Images"></li>
+                                                    <li class="title">10+ People Placed Bid</li>
+                                                </ul>
+
+                                                <p><i class="ri-heart-line"></i> 112</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3 col-md-6">
+                                    <div class="featured-item">
+                                        <div class="featured-item-img">
+                                            <a href="../product/item-details.html">
+                                                <img src="../assets/images/featured/featured-img6.jpg" alt="Images">
+                                            </a>
+                                            <div class="featured-user">
+                                                <a href="../product/author-profile.html" class="featured-user-option">
+                                                    <img src="../assets/images/featured/featured-user6.jpg" alt="Images">
+                                                    <span>Created by @Samuel</span>
+                                                </a>
+                                            </div>
+                                            <button type="button" class="default-btn border-radius-5">Place Bid</button>
+                                        </div>
+
+                                        <div class="content">
+                                            <h3><a href="../product/author-profile.html">Supper Nuemorphism</a></h3>
+                                            <div class="content-in">
+                                                <span>130 ETH 12/14</span>
+                                                <h4>Bid 70 ETH </h4>
+                                            </div>
+                                            <div class="featured-content-list">
+                                                <ul>
+                                                    <li><img src="../assets/images/featured/featured-user7.jpg" alt="Images"></li>
+                                                    <li><img src="../assets/images/featured/featured-user8.jpg" alt="Images"></li>
+                                                    <li class="title">10+ People Placed Bid</li>
+                                                </ul>
+
+                                                <p><i class="ri-heart-line"></i> 162</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3 col-md-6">
+                                    <div class="featured-item">
+                                        <div class="featured-item-img">
+                                            <a href="../product/item-details.html">
+                                                <img src="../assets/images/featured/featured-img7.jpg" alt="Images">
+                                            </a>
+                                            <div class="featured-user">
+                                                <a href="../product/author-profile.html" class="featured-user-option">
+                                                    <img src="../assets/images/featured/featured-user7.jpg" alt="Images">
+                                                    <span>Created by @Martina</span>
+                                                </a>
+                                            </div>
+                                            <button type="button" class="default-btn border-radius-5">Place Bid</button>
+                                        </div>
+
+                                        <div class="content">
+                                            <h3><a href="../product/author-profile.html">Dark-light Angel</a></h3>
+                                            <div class="content-in">
+                                                <span>110 ETH 12/14</span>
+                                                <h4>Bid 80 ETH </h4>
+                                            </div>
+                                            <div class="featured-content-list">
+                                                <ul>
+                                                    <li><img src="../assets/images/featured/featured-user8.jpg" alt="Images"></li>
+                                                    <li><img src="../assets/images/featured/featured-user1.jpg" alt="Images"></li>
+                                                    <li class="title">10+ People Placed Bid</li>
+                                                </ul>
+
+                                                <p><i class="ri-heart-line"></i> 162</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3 col-md-6">
+                                    <div class="featured-item">
+                                        <div class="featured-item-img">
+                                            <a href="../product/item-details.html">
+                                                <img src="../assets/images/featured/featured-img8.jpg" alt="Images">
+                                            </a>
+                                            <div class="featured-user">
+                                                <a href="../product/author-profile.html" class="featured-user-option">
+                                                    <img src="../assets/images/featured/featured-user8.jpg" alt="Images">
+                                                    <span>Created by @Henry</span>
+                                                </a>
+                                            </div>
+                                            <button type="button" class="default-btn border-radius-5">Place Bid</button>
+                                        </div>
+
+                                        <div class="content">
+                                            <h3><a href="../product/author-profile.html">Exe Dream Hight</a></h3>
+                                            <div class="content-in">
+                                                <span>160 ETH 12/14</span>
+                                                <h4>Bid 90 ETH </h4>
+                                            </div>
+                                            <div class="featured-content-list">
+                                                <ul>
+                                                    <li><img src="../assets/images/featured/featured-user1.jpg" alt="Images"></li>
+                                                    <li><img src="../assets/images/featured/featured-user3.jpg" alt="Images"></li>
+                                                    <li class="title">10+ People Placed Bid</li>
+                                                </ul>
+
+                                                <p><i class="ri-heart-line"></i> 182</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3 col-md-6">
+                                    <div class="featured-item">
+                                        <div class="featured-item-img">
+                                            <a href="../product/item-details.html">
+                                                <img src="../assets/images/featured/featured-img1.jpg" alt="Images">
+                                            </a>
+                                            <div class="featured-user">
+                                                <a href="../product/author-profile.html" class="featured-user-option">
+                                                    <img src="../assets/images/featured/featured-user1.jpg" alt="Images">
+                                                    <span>Created by @Farnil</span>
+                                                </a>
+                                            </div>
+                                            <button type="button" class="default-btn border-radius-5">Place Bid</button>
+                                        </div>
+
+                                        <div class="content">
+                                            <h3><a href="../product/author-profile.html">Industrial Revolution</a></h3>
+                                            <div class="content-in">
+                                                <span>100 ETH 12/14</span>
+                                                <h4>Bid 80 ETH </h4>
+                                            </div>
+                                            <div class="featured-content-list">
+                                                <ul>
+                                                    <li><img src="../assets/images/featured/featured-user1.jpg" alt="Images"></li>
+                                                    <li><img src="../assets/images/featured/featured-user2.jpg" alt="Images"></li>
+                                                    <li class="title">10+ People Placed Bid</li>
+                                                </ul>
+
+                                                <p><i class="ri-heart-line"></i> 122</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3 col-md-6">
+                                    <div class="featured-item">
+                                        <div class="featured-item-img">
+                                            <a href="../product/item-details.html">
+                                                <img src="../assets/images/featured/featured-img2.jpg" alt="Images">
+                                            </a>
+                                            <div class="featured-user">
+                                                <a href="../product/author-profile.html" class="featured-user-option">
+                                                    <img src="../assets/images/featured/featured-user2.jpg" alt="Images">
+                                                    <span>Created by @Adison</span>
+                                                </a>
+                                            </div>
+                                            <button type="button" class="default-btn border-radius-5">Place Bid</button>
+                                        </div>
+
+                                        <div class="content">
+                                            <h3><a href="../product/author-profile.html">Love In The Air</a></h3>
+                                            <div class="content-in">
+                                                <span>110 ETH 12/14</span>
+                                                <h4>Bid 70 ETH </h4>
+                                            </div>
+                                            <div class="featured-content-list">
+                                                <ul>
+                                                    <li><img src="../assets/images/featured/featured-user3.jpg" alt="Images"></li>
+                                                    <li><img src="../assets/images/featured/featured-user2.jpg" alt="Images"></li>
+                                                    <li class="title">10+ People Placed Bid</li>
+                                                </ul>
+
+                                                <p><i class="ri-heart-line"></i> 112</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3 col-md-6">
+                                    <div class="featured-item">
+                                        <div class="featured-item-img">
+                                            <a href="../product/item-details.html">
+                                                <img src="../assets/images/featured/featured-img3.jpg" alt="Images">
+                                            </a>
+                                            <div class="featured-user">
+                                                <a href="../product/author-profile.html" class="featured-user-option">
+                                                    <img src="../assets/images/featured/featured-user3.jpg" alt="Images">
+                                                    <span>Created by @Jekob</span>
+                                                </a>
+                                            </div>
+                                            <button type="button" class="default-btn border-radius-5">Place Bid</button>
+                                        </div>
+
+                                        <div class="content">
+                                            <h3><a href="../product/author-profile.html">Become One With Nature</a></h3>
+                                            <div class="content-in">
+                                                <span>120 ETH 12/14</span>
+                                                <h4>Bid 90 ETH </h4>
+                                            </div>
+                                            <div class="featured-content-list">
+                                                <ul>
+                                                    <li><img src="../assets/images/featured/featured-user4.jpg" alt="Images"></li>
+                                                    <li><img src="../assets/images/featured/featured-user5.jpg" alt="Images"></li>
+                                                    <li class="title">10+ People Placed Bid</li>
+                                                </ul>
+
+                                                <p><i class="ri-heart-line"></i> 132</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3 col-md-6">
+                                    <div class="featured-item">
+                                        <div class="featured-item-img">
+                                            <a href="../product/item-details.html">
+                                                <img src="../assets/images/featured/featured-img4.jpg" alt="Images">
+                                            </a>
+                                            <div class="featured-user">
+                                                <a href="../product/author-profile.html" class="featured-user-option">
+                                                    <img src="../assets/images/featured/featured-user4.jpg" alt="Images">
+                                                    <span>Created by @Jack</span>
+                                                </a>
+                                            </div>
+                                            <button type="button" class="default-btn border-radius-5">Place Bid</button>
+                                        </div>
+
+                                        <div class="content">
+                                            <h3><a href="../product/author-profile.html">Twilight Fracture City</a></h3>
+                                            <div class="content-in">
+                                                <span>130 ETH 12/14</span>
+                                                <h4>Bid 80 ETH </h4>
+                                            </div>
+                                            <div class="featured-content-list">
+                                                <ul>
+                                                    <li><img src="../assets/images/featured/featured-user5.jpg" alt="Images"></li>
+                                                    <li><img src="../assets/images/featured/featured-user6.jpg" alt="Images"></li>
+                                                    <li class="title">10+ People Placed Bid</li>
+                                                </ul>
+
+                                                <p><i class="ri-heart-line"></i> 142</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tabs_item">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-3 col-md-6">
+                                    <div class="featured-item">
+                                        <div class="featured-item-img">
+                                            <a href="../product/item-details.html">
+                                                <img src="../assets/images/featured/featured-img3.jpg" alt="Images">
+                                            </a>
+                                            <div class="featured-user">
+                                                <a href="../product/author-profile.html" class="featured-user-option">
+                                                    <img src="../assets/images/featured/featured-user3.jpg" alt="Images">
+                                                    <span>Created by @Jekob</span>
+                                                </a>
+                                            </div>
+                                            <button type="button" class="default-btn border-radius-5">Place Bid</button>
+                                        </div>
+
+                                        <div class="content">
+                                            <h3><a href="../product/author-profile.html">Become One With Nature</a></h3>
+                                            <div class="content-in">
+                                                <span>120 ETH 12/14</span>
+                                                <h4>Bid 90 ETH </h4>
+                                            </div>
+                                            <div class="featured-content-list">
+                                                <ul>
+                                                    <li><img src="../assets/images/featured/featured-user4.jpg" alt="Images"></li>
+                                                    <li><img src="../assets/images/featured/featured-user5.jpg" alt="Images"></li>
+                                                    <li class="title">10+ People Placed Bid</li>
+                                                </ul>
+
+                                                <p><i class="ri-heart-line"></i> 132</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3 col-md-6">
+                                    <div class="featured-item">
+                                        <div class="featured-item-img">
+                                            <a href="../product/item-details.html">
+                                                <img src="../assets/images/featured/featured-img4.jpg" alt="Images">
+                                            </a>
+                                            <div class="featured-user">
+                                                <a href="../product/author-profile.html" class="featured-user-option">
+                                                    <img src="../assets/images/featured/featured-user4.jpg" alt="Images">
+                                                    <span>Created by @Jack</span>
+                                                </a>
+                                            </div>
+                                            <button type="button" class="default-btn border-radius-5">Place Bid</button>
+                                        </div>
+
+                                        <div class="content">
+                                            <h3><a href="../product/author-profile.html">Twilight Fracture City</a></h3>
+                                            <div class="content-in">
+                                                <span>130 ETH 12/14</span>
+                                                <h4>Bid 80 ETH </h4>
+                                            </div>
+                                            <div class="featured-content-list">
+                                                <ul>
+                                                    <li><img src="../assets/images/featured/featured-user5.jpg" alt="Images"></li>
+                                                    <li><img src="../assets/images/featured/featured-user6.jpg" alt="Images"></li>
+                                                    <li class="title">10+ People Placed Bid</li>
+                                                </ul>
+
+                                                <p><i class="ri-heart-line"></i> 142</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3 col-md-6">
+                                    <div class="featured-item">
+                                        <div class="featured-item-img">
+                                            <a href="../product/item-details.html">
+                                                <img src="../assets/images/featured/featured-img5.jpg" alt="Images">
+                                            </a>
+                                            <div class="featured-user">
+                                                <a href="../product/author-profile.html" class="featured-user-option">
+                                                    <img src="../assets/images/featured/featured-user5.jpg" alt="Images">
+                                                    <span>Created by @Daniel</span>
+                                                </a>
+                                            </div>
+                                            <button type="button" class="default-btn border-radius-5">Place Bid</button>
+                                        </div>
+
+                                        <div class="content">
+                                            <h3><a href="../product/author-profile.html">Walking On Air</a></h3>
+                                            <div class="content-in">
+                                                <span>110 ETH 12/14</span>
+                                                <h4>Bid 90 ETH </h4>
+                                            </div>
+                                            <div class="featured-content-list">
+                                                <ul>
+                                                    <li><img src="../assets/images/featured/featured-user6.jpg" alt="Images"></li>
+                                                    <li><img src="../assets/images/featured/featured-user7.jpg" alt="Images"></li>
+                                                    <li class="title">10+ People Placed Bid</li>
+                                                </ul>
+
+                                                <p><i class="ri-heart-line"></i> 112</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3 col-md-6">
+                                    <div class="featured-item">
+                                        <div class="featured-item-img">
+                                            <a href="../product/item-details.html">
+                                                <img src="../assets/images/featured/featured-img6.jpg" alt="Images">
+                                            </a>
+                                            <div class="featured-user">
+                                                <a href="../product/author-profile.html" class="featured-user-option">
+                                                    <img src="../assets/images/featured/featured-user6.jpg" alt="Images">
+                                                    <span>Created by @Samuel</span>
+                                                </a>
+                                            </div>
+                                            <button type="button" class="default-btn border-radius-5">Place Bid</button>
+                                        </div>
+
+                                        <div class="content">
+                                            <h3><a href="../product/author-profile.html">Supper Nuemorphism</a></h3>
+                                            <div class="content-in">
+                                                <span>130 ETH 12/14</span>
+                                                <h4>Bid 70 ETH </h4>
+                                            </div>
+                                            <div class="featured-content-list">
+                                                <ul>
+                                                    <li><img src="../assets/images/featured/featured-user7.jpg" alt="Images"></li>
+                                                    <li><img src="../assets/images/featured/featured-user8.jpg" alt="Images"></li>
+                                                    <li class="title">10+ People Placed Bid</li>
+                                                </ul>
+
+                                                <p><i class="ri-heart-line"></i> 162</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3 col-md-6">
+                                    <div class="featured-item">
+                                        <div class="featured-item-img">
+                                            <a href="../product/item-details.html">
+                                                <img src="../assets/images/featured/featured-img7.jpg" alt="Images">
+                                            </a>
+                                            <div class="featured-user">
+                                                <a href="../product/author-profile.html" class="featured-user-option">
+                                                    <img src="../assets/images/featured/featured-user7.jpg" alt="Images">
+                                                    <span>Created by @Martina</span>
+                                                </a>
+                                            </div>
+                                            <button type="button" class="default-btn border-radius-5">Place Bid</button>
+                                        </div>
+
+                                        <div class="content">
+                                            <h3><a href="../product/author-profile.html">Dark-light Angel</a></h3>
+                                            <div class="content-in">
+                                                <span>110 ETH 12/14</span>
+                                                <h4>Bid 80 ETH </h4>
+                                            </div>
+                                            <div class="featured-content-list">
+                                                <ul>
+                                                    <li><img src="../assets/images/featured/featured-user8.jpg" alt="Images"></li>
+                                                    <li><img src="../assets/images/featured/featured-user1.jpg" alt="Images"></li>
+                                                    <li class="title">10+ People Placed Bid</li>
+                                                </ul>
+
+                                                <p><i class="ri-heart-line"></i> 162</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3 col-md-6">
+                                    <div class="featured-item">
+                                        <div class="featured-item-img">
+                                            <a href="../product/item-details.html">
+                                                <img src="../assets/images/featured/featured-img8.jpg" alt="Images">
+                                            </a>
+                                            <div class="featured-user">
+                                                <a href="../product/author-profile.html" class="featured-user-option">
+                                                    <img src="../assets/images/featured/featured-user8.jpg" alt="Images">
+                                                    <span>Created by @Henry</span>
+                                                </a>
+                                            </div>
+                                            <button type="button" class="default-btn border-radius-5">Place Bid</button>
+                                        </div>
+
+                                        <div class="content">
+                                            <h3><a href="../product/author-profile.html">Exe Dream Hight</a></h3>
+                                            <div class="content-in">
+                                                <span>160 ETH 12/14</span>
+                                                <h4>Bid 90 ETH </h4>
+                                            </div>
+                                            <div class="featured-content-list">
+                                                <ul>
+                                                    <li><img src="../assets/images/featured/featured-user1.jpg" alt="Images"></li>
+                                                    <li><img src="../assets/images/featured/featured-user3.jpg" alt="Images"></li>
+                                                    <li class="title">10+ People Placed Bid</li>
+                                                </ul>
+
+                                                <p><i class="ri-heart-line"></i> 182</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3 col-md-6">
+                                    <div class="featured-item">
+                                        <div class="featured-item-img">
+                                            <a href="../product/item-details.html">
+                                                <img src="../assets/images/featured/featured-img1.jpg" alt="Images">
+                                            </a>
+                                            <div class="featured-user">
+                                                <a href="../product/author-profile.html" class="featured-user-option">
+                                                    <img src="../assets/images/featured/featured-user1.jpg" alt="Images">
+                                                    <span>Created by @Farnil</span>
+                                                </a>
+                                            </div>
+                                            <button type="button" class="default-btn border-radius-5">Place Bid</button>
+                                        </div>
+
+                                        <div class="content">
+                                            <h3><a href="../product/author-profile.html">Industrial Revolution</a></h3>
+                                            <div class="content-in">
+                                                <span>100 ETH 12/14</span>
+                                                <h4>Bid 80 ETH </h4>
+                                            </div>
+                                            <div class="featured-content-list">
+                                                <ul>
+                                                    <li><img src="../assets/images/featured/featured-user1.jpg" alt="Images"></li>
+                                                    <li><img src="../assets/images/featured/featured-user2.jpg" alt="Images"></li>
+                                                    <li class="title">10+ People Placed Bid</li>
+                                                </ul>
+
+                                                <p><i class="ri-heart-line"></i> 122</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3 col-md-6">
+                                    <div class="featured-item">
+                                        <div class="featured-item-img">
+                                            <a href="../product/item-details.html">
+                                                <img src="../assets/images/featured/featured-img2.jpg" alt="Images">
+                                            </a>
+                                            <div class="featured-user">
+                                                <a href="../product/author-profile.html" class="featured-user-option">
+                                                    <img src="../assets/images/featured/featured-user2.jpg" alt="Images">
+                                                    <span>Created by @Adison</span>
+                                                </a>
+                                            </div>
+                                            <button type="button" class="default-btn border-radius-5">Place Bid</button>
+                                        </div>
+
+                                        <div class="content">
+                                            <h3><a href="../product/author-profile.html">Love In The Air</a></h3>
+                                            <div class="content-in">
+                                                <span>110 ETH 12/14</span>
+                                                <h4>Bid 70 ETH </h4>
+                                            </div>
+                                            <div class="featured-content-list">
+                                                <ul>
+                                                    <li><img src="../assets/images/featured/featured-user3.jpg" alt="Images"></li>
+                                                    <li><img src="../assets/images/featured/featured-user2.jpg" alt="Images"></li>
+                                                    <li class="title">10+ People Placed Bid</li>
+                                                </ul>
+
+                                                <p><i class="ri-heart-line"></i> 112</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12 col-md-12 text-center">
+                        <div class="pagination-area">
+							<a href="discover-1.html" class="prev page-numbers">
+								<i class="ri-arrow-left-s-line"></i>
+							</a>
+
+							<span class="page-numbers current" aria-current="page">1</span>
+							<a href="discover-1.html" class="page-numbers">2</a>
+							<a href="discover-1.html" class="page-numbers">3</a>
+
+							<a href="discover-1.html" class="next page-numbers">
+								<i class="ri-arrow-right-s-line"></i>
+							</a>
+						</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Featured Area End -->
+
+            <!-- Involved Area -->
+        <div class="involved-area-two pt-100 pb-70">
+            <div class="container">
+                <div class="section-title text-center">
+                    <h2>Get Involved</h2>
+                </div>
+
+                <div class="row pt-45">
+                    <div class="col-lg-3 col-6">
+                        <div class="involved-card">
+                            <div class="icon">
+                                <i class="ri-flight-takeoff-line"></i>
+                            </div>
+                            <h3>Join Our <b>Community</b></h3>
+                            <ul class="social-link">
+                                <li>
+                                    <a href="https://www.google.com/" target="_blank">
+                                        <i class="ri-google-fill"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.facebook.com/" target="_blank">
+                                        <i class="ri-facebook-fill"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.instagram.com/" target="_blank">
+                                        <i class="ri-instagram-fill"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://twitter.com/" target="_blank">
+                                        <i class="ri-twitter-fill"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.linkedin.com/" target="_blank">
+                                        <i class="ri-linkedin-fill"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-6">
+                        <div class="involved-card">
+                            <div class="icon">
+                                <i class="ri-checkbox-circle-line"></i>
+                            </div>
+                            <h3>Become A <b>Creator</b></h3>
+                            <a href="{% url 'signup-user' %}" class="default-btn">Register</a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-6">
+                        <div class="involved-card">
+                            <div class="icon">
+                                <i class="ri-heart-2-line"></i>
+                            </div>
+                            <h3>Become A <b>Charity Partner</b></h3>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-6">
+                        <div class="involved-card">
+                            <div class="icon">
+                                <i class="ri-discuss-line"></i>
+                            </div>
+                            <h3>Reach Out To <b>Our Authors</b></h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Involved Area End -->
+
+{% endblock %}

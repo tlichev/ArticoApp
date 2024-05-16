@@ -3,7 +3,7 @@
 
     <div class="featured-card box-shadow" id="prod-{{ product.pk }}">
         <div class="featured-card-img">
-            <a href="{% url 'details-product' username=product.user.email product_slug=product.slug%}">
+{#            <a href="{% url 'details-product' username=product.user.email product_slug=product.slug%}">#}
                 <img src="{{ product.product_photo.url}}" alt="Images">
             </a>
             <a href="{% url 'product-like' pk=product.pk %}"><p><i class="ri-heart-line"></i>{{ product.productlike_set.count }} likes</p></a>
@@ -17,7 +17,7 @@
                     <span>{{ product.short_description}}</span>
                 </div>
 
-                <a href="{% url 'details-product' username=product.user.email product_slug=product.slug%}"class="featured-content-btn">
+{#                <a href="{% url 'details-product' username=product.user.email product_slug=product.slug%}"class="featured-content-btn">#}
                     <i class="ri-arrow-right-line"></i>
                 </a>
             </div>

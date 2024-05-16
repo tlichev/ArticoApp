@@ -80,7 +80,7 @@
                                         <div class="content">
                                             <div class="images">
 
-                                                <img src="{{ product.user.profile.profile_photo.url }}" alt="Images">
+                                                <a href="{% url 'author-profile' pk=product.user.pk %}"><img src="{{ product.user.profile.profile_photo.url }}" alt="Images"></a>
                                                 <i class="ri-check-line"></i>
                                             </div>
                                            
