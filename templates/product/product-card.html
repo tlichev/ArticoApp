@@ -3,11 +3,11 @@
 
     <div class="featured-card box-shadow" id="prod-{{ product.pk }}">
         <div class="featured-card-img">
-            <a href="item-details.html">
+            <a href="{% url 'details-product' username=product.user.email product_slug=product.slug%}">
                 <img src="{{ product.product_photo.url}}" alt="Images">
             </a>
             <a href="{% url 'product-like' pk=product.pk %}"><p><i class="ri-heart-line"></i>{{ product.productlike_set.count }} likes</p></a>
-    <button type="button" class="default-btn border-radius-5">Place Bid</button>
+                <button type="button" class="default-btn border-radius-5">{{ product.price }} $</button>
         </div>
 
         <div class="content">
@@ -15,10 +15,9 @@
             <div class="content-in">
                 <div class="featured-card-left">
                     <span>{{ product.short_description}}</span>
-                    <h4>{{ product.price }}</h4>
                 </div>
 
-                <a href="item-details.html" class="featured-content-btn">
+                <a href="{% url 'details-product' username=product.user.email product_slug=product.slug%}"class="featured-content-btn">
                     <i class="ri-arrow-right-line"></i>
                 </a>
             </div>

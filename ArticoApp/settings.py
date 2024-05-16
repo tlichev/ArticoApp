@@ -50,6 +50,8 @@ INSTALLED_APPS = [
     'ArticoApp.accounts',
     'ArticoApp.discover',
     'ArticoApp.products',
+    'ArticoApp.discounts',
+    'ArticoApp.sales',
 ]
 
 MIDDLEWARE = [

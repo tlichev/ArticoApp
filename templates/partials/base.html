@@ -40,8 +40,11 @@
 
         <link rel="stylesheet" href="{% static '/css/profile-circle-navbar.css' %}">
 
+        <link rel="stylesheet" href="{% static '/buy/css/style.css' %}">
+        <link rel="stylesheet" href="{% static '/buy/css/bootstrap-datetimepicker.css' %}">
+
         <!-- Title -->
-        <title>Trayancho se muchi</title>
+        <title>Artico</title>
 
         <!-- Favicon -->
 {#        <link rel="icon" type="image/png" href="assets/images/favicon.png">#}
@@ -131,7 +134,7 @@
                                 </li>
 
                                 <li class="nav-item">
-                                    <a href="contact.html" class="nav-link">
+                                    <a href="{% url 'checkout' %}" class="nav-link">
                                         My sells
                                     </a>
                                 </li>

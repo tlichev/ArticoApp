@@ -18,6 +18,8 @@ class MaxFileSizeValidator(BaseValidator):
 
 
 class Product(IHaveUser, models.Model):
+    MAX_LENGTH = 300
+    SLUG_MAX_LENGTH = 20
     class Category(models.TextChoices):
         PAINTINGS = 'Paintings', 'Paintings'
         SCULPTURES = 'Sculptures', 'Sculptures'
@@ -27,9 +29,7 @@ class Product(IHaveUser, models.Model):
         DIGITAL_ART = 'Digital Art', 'Digital Art'
         OTHER = 'Other', 'Other'
 
-    MAX_LENGTH = 300
 
-    SLUG_MAX_LENGTH = 20
 
 
 
@@ -44,6 +44,11 @@ class Product(IHaveUser, models.Model):
         choices=Category.choices,
         default=Category.OTHER,
     )
+
+    copies = models.IntegerField(default=1,
+                                 null=False,
+                                 blank=False
+                                 )
 
     short_description = models.TextField()
 

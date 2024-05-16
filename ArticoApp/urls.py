@@ -9,6 +9,8 @@ urlpatterns = [
     path('', include('ArticoApp.discover.urls')),
     path('a/', include('ArticoApp.accounts.urls')),
     path('products/', include('ArticoApp.products.urls')),
+    path('discounts/', include('ArticoApp.discounts.urls')),
+    path('sales/', include('ArticoApp.sales.urls')),
 ]
 
 if settings.DEBUG:

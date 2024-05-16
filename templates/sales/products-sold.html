@@ -1,0 +1,29 @@
+{% for sale in sales %}
+
+                    <div class="col-lg-3 col-6">
+                        <div class="author-item">
+                                <img src="{{ sale.product.product_photo.url }}" alt="Images">
+                            </a>
+                            <div class="content">
+                                <div class="author-user-list">
+
+                                    <div class="author-user-content">
+                                        <h3>{{ sale.product.name }}</h3>
+                                        <span>{{ sale.created_at}}</span>
+                                    </div>
+                                </div>
+
+                                <div class="author-content">
+                                    <div class="content-left">
+                                        <span>quantity</span>
+                                        <h4>{{   sale.quantity   }}</h4>
+                                    </div>
+
+
+                                         <a href="#"><div class="content-right">{{ sale.price }} $</div></a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+{% endfor %}

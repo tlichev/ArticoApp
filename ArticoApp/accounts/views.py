@@ -6,7 +6,7 @@ from django.urls import reverse_lazy, reverse
 from django.views import generic as views
 
 from ArticoApp.accounts.forms import SignUpUserForm, ProfileUserCreateForm
-from ArticoApp.accounts.models import Profile, UserFollow
+from ArticoApp.accounts.models import Profile, UserFollow, ArticoUser
 from ArticoApp.products.models import Product
 
 # Create your views here.
@@ -66,11 +66,20 @@ class AuthorProfileView(views.DetailView, OwnerRequiredMixin):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         author_profile = self.get_object()  # Get the author profile object
+        author_id = self.kwargs['pk']
 
         # Get all products associated with the author profile
         author_products = Product.objects.filter(user_id = self.object.pk)
+        current_user = ArticoUser.objects.filter(pk=author_id).first()
 
-        context['author_products'] = author_products
+        print(current_user)
+
+        context.update({
+            'author_products': author_products,
+            'author_profile': author_profile,
+            'current_user': current_user
+
+        })
         return context
 
 
